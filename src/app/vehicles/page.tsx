@@ -12,6 +12,8 @@ interface VehiclesPageProps {
   searchParams: { [key: string]: string | string[] | undefined };
 }
 
+const ITEMS_LIMIT = 8;
+
 export default async function VehiclesPage({
   searchParams,
 }: VehiclesPageProps) {
@@ -19,7 +21,11 @@ export default async function VehiclesPage({
   const sorting = (searchParams.sorting ||
     SortingType.DescendingDate) as SortingType;
 
-  const { vehicles, totalCount } = await getVehicles(8, offset, sorting);
+  const { vehicles, totalCount } = await getVehicles(
+    ITEMS_LIMIT,
+    offset,
+    sorting
+  );
 
   return (
     <main className="container mx-auto px-4 py-8 flex-grow-1 h-full flex flex-col">
@@ -38,7 +44,12 @@ export default async function VehiclesPage({
       </div>
       <VehicleList vehicles={vehicles} isPending={false} />
       <div className="mt-8">
-        <VehiclePagination />
+        <VehiclePagination
+          limit={ITEMS_LIMIT}
+          offset={offset}
+          totalCount={totalCount}
+          sorting={sorting}
+        />
       </div>
     </main>
   );
