@@ -5,4 +5,6 @@ export enum SortingType {
   DescendingDate = 'descdate',
   AscendingName = 'ascname',
   DescendingName = 'descname',
+  AscendingYear = 'ascyear',
+  DescendingYear = 'descyear',
 }

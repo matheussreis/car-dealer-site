@@ -1,5 +1,5 @@
 import { formatCurrency } from '@/lib/formatters';
-import { Vehicle } from '@/types';
+import { Vehicle } from '@/interfaces';
 import Image from 'next/image';
 import Link from 'next/link';
 

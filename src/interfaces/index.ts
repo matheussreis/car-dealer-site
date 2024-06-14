@@ -21,3 +21,20 @@ export interface Vehicle {
   };
   features: Array<string>;
 }
+
+export interface VehicleSpecRangeFilter {
+  from?: string;
+  to?: string;
+}
+
+export interface VehicleSpecsFilter {
+  [key: string]: string | VehicleSpecRangeFilter;
+  mileage: VehicleSpecRangeFilter;
+  year: VehicleSpecRangeFilter;
+  bodyTypes: string;
+  fuelTypes: string;
+  gearbox: string;
+  brands: string;
+  origin: string;
+  drivetrain: string;
+}

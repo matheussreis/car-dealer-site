@@ -1,7 +1,7 @@
 'use client';
 
 import { SortingType } from '@/enums';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import {
   DropdownMenuTrigger,
   DropdownMenuRadioItem,
@@ -12,6 +12,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { LuArrowUpDown } from 'react-icons/lu';
 import Link from 'next/link';
+import useUrlParams from '@/hooks/use-url-params';
 
 const SORTING_OPTIONS: { [key in SortingType]: string } = {
   [SortingType.AscendingPrice]: 'Price: Low to High',
@@ -20,6 +21,8 @@ const SORTING_OPTIONS: { [key in SortingType]: string } = {
   [SortingType.DescendingDate]: 'Date: New to Old',
   [SortingType.AscendingName]: 'Name: A to Z',
   [SortingType.DescendingName]: 'Name: Z to A',
+  [SortingType.AscendingYear]: 'Year: Old to New',
+  [SortingType.DescendingYear]: 'Year: New to Old',
 };
 
 interface VehicleSortingProps {
@@ -30,24 +33,21 @@ export default function VehicleSorting({ sorting }: VehicleSortingProps) {
   const [selectedSorting, setSelectedSorting] = useState<SortingType>(
     SortingType.DescendingDate
   );
-  const [isOpen, setIsOpen] = useState(false);
 
-  const valueChangeHandler = (value: string) => {
+  const { updateUrlParam } = useUrlParams();
+
+  const valueChangeHandler = useCallback((value: string) => {
     setSelectedSorting(value as unknown as SortingType);
-  };
+  }, []);
 
   useEffect(() => {
     setSelectedSorting(sorting);
   }, [sorting]);
 
   return (
-    <DropdownMenu open={isOpen}>
+    <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button
-          className="shrink-0"
-          variant="outline"
-          onClick={() => setIsOpen(true)}
-        >
+        <Button className="shrink-0" variant="outline">
           <LuArrowUpDown className="w-4 h-4 mr-2" />
           {SORTING_OPTIONS[selectedSorting] || 'Sort by'}
         </Button>
@@ -60,10 +60,7 @@ export default function VehicleSorting({ sorting }: VehicleSortingProps) {
           {Object.keys(SORTING_OPTIONS).map((option) => {
             return (
               <DropdownMenuRadioItem key={option} value={option.toString()}>
-                <Link
-                  href={`/vehicles?sorting=${option}`}
-                  onClick={() => setIsOpen(false)}
-                >
+                <Link href={updateUrlParam('sorting', `${option}`)}>
                   {SORTING_OPTIONS[option as SortingType]}
                 </Link>
               </DropdownMenuRadioItem>

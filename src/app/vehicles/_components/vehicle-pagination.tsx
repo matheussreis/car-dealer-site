@@ -6,41 +6,40 @@ import {
   PaginationItem,
   PaginationLink,
 } from '@/components/ui/pagination';
-import { SortingType } from '@/enums';
-import { usePathname, useSearchParams } from 'next/navigation';
 import PaginationControls from './vehicle-pagination-controls';
+import useUrlParams from '@/hooks/use-url-params';
 
 interface VehiclePaginationProps {
   limit: number;
   offset: number;
   totalCount: number;
-  sorting: SortingType;
 }
 
 export default function VehiclePagination({
   limit = 8,
   offset = 0,
   totalCount,
-  sorting,
 }: VehiclePaginationProps) {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
+  const { updateUrlParam } = useUrlParams();
+
   const isPaginationItemDisabled = totalCount === 0;
 
-  const offestParam = Number(offset || searchParams.get('offset') || 0);
-  const limitParam = Number(limit || searchParams.get('limit') || 0);
+  const offestParam = Number(offset || 0);
+  const limitParam = Number(limit || 0);
 
-  let numberOfPages = Math.round(totalCount / limit);
-  if (totalCount <= limit * 2) {
-    numberOfPages = 2;
+  let numberOfPages = Math.ceil(totalCount / limit);
+  if (totalCount <= limit) {
+    numberOfPages = 1;
   }
 
   const pages = [];
 
   for (let i = 1; i <= numberOfPages; i++) {
+    const link = updateUrlParam('offset', `${i - 1}`);
+
     pages.push(
       <PaginationItem
-        key={`${pathname}?offset=${i - 1}&sorting=${sorting}`}
+        key={link}
         aria-disabled={isPaginationItemDisabled}
         tabIndex={isPaginationItemDisabled ? -1 : undefined}
         className={
@@ -49,9 +48,7 @@ export default function VehiclePagination({
             : undefined
         }
       >
-        <PaginationLink href={`${pathname}?offset=${i - 1}&sorting=${sorting}`}>
-          {i}
-        </PaginationLink>
+        <PaginationLink href={link}>{i}</PaginationLink>
       </PaginationItem>
     );
   }
@@ -63,9 +60,8 @@ export default function VehiclePagination({
           <PaginationControls
             limit={limitParam}
             offset={offestParam}
-            pathname={pathname}
             totalCount={totalCount}
-            sorting={sorting}
+            updateUrlParam={updateUrlParam}
           >
             {pages}
           </PaginationControls>
