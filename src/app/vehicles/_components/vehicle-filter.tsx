@@ -30,16 +30,7 @@ interface VehicleFilterProps {
 }
 
 export function VehicleFilter({ filters }: VehicleFilterProps) {
-  const {
-    year,
-    mileage,
-    bodyTypes,
-    fuelTypes,
-    gearbox,
-    brands,
-    origin,
-    drivetrain,
-  } = getFilters();
+  const filterOptions = getFilters();
 
   const router = useRouter();
 
@@ -91,56 +82,56 @@ export function VehicleFilter({ filters }: VehicleFilterProps) {
           <RangeFilter
             label="Mileage"
             name="mileage"
-            range={mileage}
+            range={filterOptions.mileage}
             onSelect={selectFilterHandler}
             value={selectedFilters.mileage}
           />
           <RangeFilter
             label="Year"
             name="year"
-            range={year}
+            range={filterOptions.year}
             onSelect={selectFilterHandler}
             value={selectedFilters.year}
           />
           <SelectFilter
             label="Body Type"
             id="bodyTypes"
-            options={bodyTypes}
+            options={filterOptions.bodyTypes}
             onSelect={selectFilterHandler}
             value={selectedFilters.bodyTypes}
           />
           <SelectFilter
             label="Fuel Type"
             id="fuelTypes"
-            options={fuelTypes}
+            options={filterOptions.fuelTypes}
             onSelect={selectFilterHandler}
             value={selectedFilters.fuelTypes}
           />
           <SelectFilter
             label="Gearbox"
             id="gearbox"
-            options={gearbox}
+            options={filterOptions.gearbox}
             onSelect={selectFilterHandler}
             value={selectedFilters.gearbox}
           />
           <SelectFilter
             label="Brands"
             id="brands"
-            options={brands}
+            options={filterOptions.brands}
             onSelect={selectFilterHandler}
             value={selectedFilters.brands}
           />
           <SelectFilter
             label="Origin"
             id="origin"
-            options={origin}
+            options={filterOptions.origin}
             onSelect={selectFilterHandler}
             value={selectedFilters.origin}
           />
           <SelectFilter
             label="Drivetrain"
             id="drivetrain"
-            options={drivetrain}
+            options={filterOptions.drivetrain}
             onSelect={selectFilterHandler}
             value={selectedFilters.drivetrain}
           />
