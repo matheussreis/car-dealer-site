@@ -17,33 +17,48 @@ class Sorting {
   static descendingText = (a: string, b: string) => b.localeCompare(a);
 }
 
-const SORTING_MAPPING: { [key in SortingType]: Function } = {
-  [SortingType.AscendingPrice]: Sorting.ascendingNumber,
-  [SortingType.DescendingPrice]: Sorting.descendingNumber,
-  [SortingType.AscendingDate]: Sorting.ascendingDate,
-  [SortingType.DescendingDate]: Sorting.descendingDate,
-  [SortingType.AscendingName]: Sorting.ascendingText,
-  [SortingType.DescendingName]: Sorting.descendingText,
-  [SortingType.AscendingYear]: Sorting.ascendingNumber,
-  [SortingType.DescendingYear]: Sorting.descendingNumber,
-};
-
-const FIELD_MAPPING: { [key in SortingType]: Function } = {
-  [SortingType.AscendingPrice]: (vehicle: Vehicle) => vehicle.specs.price,
-  [SortingType.DescendingPrice]: (vehicle: Vehicle) => vehicle.specs.price,
-  [SortingType.AscendingDate]: (vehicle: Vehicle) => vehicle.dateEntered,
-  [SortingType.DescendingDate]: (vehicle: Vehicle) => vehicle.dateEntered,
-  [SortingType.AscendingName]: (vehicle: Vehicle) => vehicle.name,
-  [SortingType.DescendingName]: (vehicle: Vehicle) => vehicle.name,
-  [SortingType.AscendingYear]: (vehicle: Vehicle) => vehicle.specs.year,
-  [SortingType.DescendingYear]: (vehicle: Vehicle) => vehicle.specs.year,
+const SORTING_MAPPING: {
+  [key in SortingType]: { sort: Function; getField: Function };
+} = {
+  [SortingType.AscendingPrice]: {
+    sort: Sorting.ascendingNumber,
+    getField: (vehicle: Vehicle) => vehicle.specs.price,
+  },
+  [SortingType.DescendingPrice]: {
+    sort: Sorting.descendingNumber,
+    getField: (vehicle: Vehicle) => vehicle.specs.price,
+  },
+  [SortingType.AscendingDate]: {
+    sort: Sorting.ascendingDate,
+    getField: (vehicle: Vehicle) => vehicle.dateEntered,
+  },
+  [SortingType.DescendingDate]: {
+    sort: Sorting.descendingDate,
+    getField: (vehicle: Vehicle) => vehicle.dateEntered,
+  },
+  [SortingType.AscendingName]: {
+    sort: Sorting.ascendingText,
+    getField: (vehicle: Vehicle) => vehicle.name,
+  },
+  [SortingType.DescendingName]: {
+    sort: Sorting.descendingText,
+    getField: (vehicle: Vehicle) => vehicle.name,
+  },
+  [SortingType.AscendingYear]: {
+    sort: Sorting.ascendingNumber,
+    getField: (vehicle: Vehicle) => vehicle.specs.year,
+  },
+  [SortingType.DescendingYear]: {
+    sort: Sorting.descendingNumber,
+    getField: (vehicle: Vehicle) => vehicle.specs.year,
+  },
 };
 
 export default function getFunctionBySorting(sortingType: SortingType) {
-  let sortFunction = SORTING_MAPPING[sortingType] || SORTING_MAPPING.descdate;
-  let getField = FIELD_MAPPING[sortingType] || FIELD_MAPPING.descdate;
+  const sorting = SORTING_MAPPING[sortingType] || SORTING_MAPPING.descdate;
+  const { sort, getField } = sorting;
 
   return (list: Array<Vehicle>) => {
-    return list.sort((a, b) => sortFunction(getField(a), getField(b)));
+    return list.sort((a, b) => sort(getField(a), getField(b)));
   };
 }
