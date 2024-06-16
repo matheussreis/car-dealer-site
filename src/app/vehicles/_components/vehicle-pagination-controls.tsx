@@ -22,8 +22,6 @@ export default function PaginationControls({
   const isPreviousDisabled = offset === 0;
   let isNextDisabled = false;
 
-  debugger;
-
   if (offset === 0) {
     isNextDisabled = totalCount <= limit;
   } else {
