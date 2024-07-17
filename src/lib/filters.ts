@@ -29,7 +29,6 @@ function getYearFilter() {
 export function getFilters() {
   return {
     year: getYearFilter(),
-    mileage: createSteppedArray(10000, 1000000, 10000),
     doors: createArrayFromRange(1, 7),
     seats: createArrayFromRange(1, 10),
     price: createSteppedArray(0, 1000000, 10000),

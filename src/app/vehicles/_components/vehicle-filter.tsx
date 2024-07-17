@@ -10,7 +10,11 @@ import { LuFilter } from 'react-icons/lu';
 import { getFilters, mergeFiltersIntoUrl } from '@/lib/filters';
 import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
-import { RangeFilter, SelectFilter } from './vehicle-filter-fields';
+import {
+  RangeFilter,
+  RangeInputFilter,
+  SelectFilter,
+} from './vehicle-filter-fields';
 import { VehicleSpecRangeFilter, VehicleSpecsFilter } from '@/interfaces';
 import useUrlParams from '@/hooks/use-url-params';
 
@@ -79,11 +83,10 @@ export function VehicleFilter({ filters }: VehicleFilterProps) {
       </PopoverTrigger>
       <PopoverContent className="w-screen max-w-[450px] p-6 rounded-lg shadow-lg md:p-8">
         <div className="grid grid-cols-1 md:lg:grid-cols-2 gap-5">
-          <RangeFilter
+          <RangeInputFilter
             label="Mileage"
             name="mileage"
-            range={filterOptions.mileage}
-            onSelect={selectFilterHandler}
+            onChange={selectFilterHandler}
             value={selectedFilters.mileage}
           />
           <RangeFilter

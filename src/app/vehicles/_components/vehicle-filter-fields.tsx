@@ -1,5 +1,6 @@
 'use client';
 
+import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import {
   SelectValue,
@@ -9,6 +10,8 @@ import {
   Select,
 } from '@/components/ui/select';
 import { VehicleSpecRangeFilter } from '@/interfaces';
+import { useEffect, useState } from 'react';
+import { LuX } from 'react-icons/lu';
 
 interface FilterFieldProps {
   label: string;
@@ -70,7 +73,7 @@ export function RangeFilter({
             <SelectValue placeholder="To" />
           </SelectTrigger>
           <SelectContent id={`${name}-to`}>
-            {range.map((item) => (
+            {[...range].reverse().map((item) => (
               <SelectItem key={item} value={item}>
                 {item}
               </SelectItem>
@@ -99,23 +102,120 @@ export function SelectFilter({
   onSelect,
   value,
 }: SelectFilterProps) {
+  const [selectValue, setSelectValue] = useState<string>(value || '');
+
+  useEffect(() => {
+    if (typeof value === 'string') {
+      setSelectValue(value);
+    }
+  }, [value]);
+
+  const clearSelectHandler = () => {
+    setSelectValue('');
+    onSelect(name || id, '');
+  };
+
   return (
     <FilterField label={label} name={name || id}>
-      <Select
-        onValueChange={(value) => onSelect(name || id, value)}
-        value={value}
-      >
-        <SelectTrigger>
-          <SelectValue placeholder="Select..." />
-        </SelectTrigger>
-        <SelectContent id={id}>
-          {Object.keys(options).map((option) => (
-            <SelectItem key={option} value={option}>
-              {options[option]}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+      <div className="relative">
+        <Select
+          onValueChange={(value) => onSelect(name || id, value)}
+          value={selectValue}
+        >
+          <SelectTrigger>
+            <SelectValue placeholder="Select..." />
+          </SelectTrigger>
+          <SelectContent id={id}>
+            {Object.keys(options).map((option) => (
+              <SelectItem key={option} value={option}>
+                {options[option]}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+        {selectValue && (
+          <span
+            onClick={() => clearSelectHandler()}
+            className="absolute top-1/2 right-3 -translate-y-1/2 text-muted-foreground hover:text-primary"
+          >
+            <LuX />
+          </span>
+        )}
+      </div>
+    </FilterField>
+  );
+}
+
+interface RangeInputFilterProps {
+  label: string;
+  name: string;
+  onChange: (name: string, value: string | object) => void;
+  value?: VehicleSpecRangeFilter;
+}
+
+export function RangeInputFilter({
+  label,
+  name,
+  onChange,
+  value,
+}: RangeInputFilterProps) {
+  const [fieldValue, setFieldValue] = useState<VehicleSpecRangeFilter>(
+    value || { from: '', to: '' }
+  );
+
+  useEffect(() => {
+    if (value) {
+      setFieldValue(value);
+    }
+  }, [value]);
+
+  const changeInputHandler = (src: string, value: string) => {
+    setFieldValue((prev) => ({ ...prev, [src]: value }));
+    onChange(name, { [src]: value });
+  };
+
+  return (
+    <FilterField label={label} name={name}>
+      <div className="grid grid-cols-2 gap-2">
+        <div className="relative w-full max-w-sm">
+          <Input
+            type="number"
+            name={`${name}-from`}
+            placeholder="From"
+            className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            value={fieldValue?.from}
+            onChange={(e) => changeInputHandler('from', e.target.value)}
+          />
+          {fieldValue?.from && (
+            <button
+              type="button"
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary"
+              onClick={() => setFieldValue((prev) => ({ ...prev, from: '' }))}
+            >
+              <LuX />
+            </button>
+          )}
+        </div>
+        <div className="relative w-full max-w-sm">
+          <Input
+            type="number"
+            name={`${name}-to`}
+            placeholder="To"
+            className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            value={fieldValue?.to}
+            onChange={(e) => changeInputHandler('to', e.target.value)}
+          />
+          {fieldValue.to && (
+            <button
+              type="button"
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary"
+              onClick={() => setFieldValue((prev) => ({ ...prev, to: '' }))}
+            >
+              <LuX />
+            </button>
+          )}
+        </div>
+      </div>
     </FilterField>
   );
 }
