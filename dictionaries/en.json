@@ -1,0 +1,12 @@
+{
+  "pages": {
+    "home": {},
+    "about": {},
+    "vehicles": {},
+    "vehicle": {}
+  },
+  "layout": {
+    "navbar": {},
+    "footer": {}
+  }
+}
