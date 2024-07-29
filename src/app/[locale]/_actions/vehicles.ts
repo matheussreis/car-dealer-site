@@ -1,6 +1,6 @@
 'use server';
 
-import vehicles from '../../../public/data.json';
+import vehicles from '../../../../public/data.json';
 import { Vehicle, VehicleSpecsFilter } from '@/interfaces';
 import { SortingType } from '@/enums';
 import { applyFilters } from '@/lib/filters';
