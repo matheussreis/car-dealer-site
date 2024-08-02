@@ -2,11 +2,150 @@
   "pages": {
     "home": {},
     "about": {},
-    "vehicles": {},
+    "vehicles": {
+      "title": "Veículos",
+      "description": "Explore a nossa seleção de veículos.",
+      "loading": "A Carregar...",
+      "noVehicles": "Sem veículos disponíveis",
+      "buttons": {
+        "filters": {
+          "title": "Filtros",
+          "apply": "Aplicar Filtros",
+          "clear": "Limpar Filtros",
+          "from": "De",
+          "to": "Até",
+          "select": "Selecione..."
+        },
+        "sorting": {
+          "title": "Odernar Por",
+          "ascprice": "Preço: Baixo para Alto",
+          "descprice": "Preço: Alto para Baixo",
+          "ascdate": "Data: Antigo para Recente",
+          "descdate": "Data: Recente para Antigo",
+          "ascname": "Nome: A para Z",
+          "descname": "Nome: Z para A",
+          "ascyear": "Ano: Antigo para Recente",
+          "descyear": "Ano: Recente para Antigo"
+        },
+        "details": "Ver Detalhes",
+        "previous": "Anterior",
+        "next": "Próximo"
+      },
+      "filters": {
+        "titles": {
+          "bodyTypes": "Tipo de Carroçaria",
+          "fuelTypes": "Tipo de Combustível",
+          "gearbox": "Caixa de Velocidades",
+          "brands": "Marca",
+          "origin": "Origem",
+          "drivetrain": "Tipo de Tração",
+          "year": "Ano",
+          "mileage": "Quilometragem"
+        },
+        "options": {
+          "bodyTypes": {
+            "cityCar": "Carro citadino",
+            "hatchback": "Hatchback",
+            "saloon": "Sedan",
+            "pickup": "Pickup",
+            "estate": "Carrinha",
+            "suv": "SUV",
+            "coupe": "Coupé",
+            "convertible": "Descapotável",
+            "performance": "Desempenho",
+            "sevenSeater": "7 Lugares",
+            "mpv": "Veículo Multiuso"
+          },
+          "fuelTypes": {
+            "petrol": "Gasolina",
+            "diesel": "Diesel",
+            "electric": "Elétrico",
+            "hybrid": "Híbrido"
+          },
+          "gearbox": {
+            "manual": "Manual",
+            "automatic": "Automático"
+          },
+          "brands": {
+            "alfaRomeo": "Alfa Romeo",
+            "audi": "Audi",
+            "bentley": "Bentley",
+            "bmw": "BMW",
+            "cadillac": "Cadillac",
+            "chevrolet": "Chevrolet",
+            "citroen": "Citroën",
+            "dacia": "Dacia",
+            "dsAutomobiles": "DS Automobiles",
+            "fiat": "Fiat",
+            "ford": "Ford",
+            "honda": "Honda",
+            "hyundai": "Hyundai",
+            "isuzu": "Isuzu",
+            "jaguar": "Jaguar",
+            "jeep": "Jeep",
+            "kia": "Kia",
+            "landRover": "Land Rover",
+            "lexus": "Lexus",
+            "maserati": "Maserati",
+            "mazda": "Mazda",
+            "mercedesBenz": "Mercedes-Benz",
+            "mini": "MINI",
+            "mitsubishi": "Mitsubishi",
+            "nissan": "Nissan",
+            "opel": "Opel",
+            "peugeot": "Peugeot",
+            "porsche": "Porsche",
+            "renault": "Renault",
+            "rollsRoyce": "Rolls-Royce",
+            "seat": "Seat",
+            "skoda": "Škoda",
+            "smart": "Smart",
+            "subaru": "Subaru",
+            "suzuki": "Suzuki",
+            "tesla": "Tesla",
+            "toyota": "Toyota",
+            "vauxhall": "Vauxhall",
+            "volkswagen": "Volkswagen",
+            "volvo": "Volvo"
+          },
+          "origin": {
+            "national": "Nacional",
+            "imported": "Importado"
+          },
+          "drivetrain": {
+            "fwd": "Tração dianteira (FWD)",
+            "rwd": "Tração traseira (RWD)",
+            "awd": "Tração integral (AWD)"
+          }
+        }
+      }
+    },
     "vehicle": {}
   },
   "layout": {
-    "navbar": {},
-    "footer": {}
+    "navbar": {
+      "home": "início",
+      "vehicles": "Veículos",
+      "about": "Sobre Nós",
+      "languages": {
+        "en": "Inglês",
+        "pt": "Português"
+      }
+    },
+    "footer": {
+      "titles": {
+        "hours": "Horários",
+        "phone": "Contacto",
+        "address": "Endereço",
+        "followUs": "Social"
+      },
+      "companyName": "Acme Inc.",
+      "hours": "9:00 às 17:00, Segunda à Sexta",
+      "phone": "+1 (555) 123-4567",
+      "address": "23 Main St, Anytown USA",
+      "copyrights": "© 2024 Acme Inc. Todos os Direitos Reservados",
+      "terms": "Termos de Serviço",
+      "privacy": "Política de Privacidade"
+    }
   }
 }

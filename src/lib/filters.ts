@@ -3,40 +3,8 @@ import {
   VehicleSpecRangeFilter,
   VehicleSpecsFilter,
 } from '@/interfaces';
-import vehicles from '../../public/data.json';
-import filters from '../../src/config/filters.json';
-import { createArrayFromRange, createSteppedArray } from './utils';
 
-function getYearFilter() {
-  let list = [...vehicles] as Array<Vehicle>;
-
-  let newest = 0;
-  let oldest = new Date().getFullYear();
-
-  list.forEach((vehicle) => {
-    if (vehicle.specs.year > newest) {
-      newest = vehicle.specs.year;
-    }
-
-    if (vehicle.specs.year < oldest) {
-      oldest = vehicle.specs.year;
-    }
-  });
-
-  return createArrayFromRange(newest, oldest);
-}
-
-export function getFilters() {
-  return {
-    year: getYearFilter(),
-    doors: createArrayFromRange(1, 7),
-    seats: createArrayFromRange(1, 10),
-    price: createSteppedArray(0, 1000000, 10000),
-    ...filters,
-  };
-}
-
-function machesStringFilter(filterValue: string, itemValue: string) {
+function matchesStringFilter(filterValue: string, itemValue: string) {
   return !filterValue || filterValue === itemValue;
 }
 
@@ -58,12 +26,12 @@ export function applyFilters(filters: VehicleSpecsFilter, list: Vehicle[]) {
 
   newList = list.filter(
     (item) =>
-      machesStringFilter(filters.bodyTypes, item.specs.bodyType) &&
-      machesStringFilter(filters.fuelTypes, item.specs.fuelType) &&
-      machesStringFilter(filters.gearbox, item.specs.gearbox) &&
-      machesStringFilter(filters.brands, item.specs.brand) &&
-      machesStringFilter(filters.origin, item.specs.origin) &&
-      machesStringFilter(filters.drivetrain, item.specs.drivetrain) &&
+      matchesStringFilter(filters.bodyTypes, item.specs.bodyType) &&
+      matchesStringFilter(filters.fuelTypes, item.specs.fuelType) &&
+      matchesStringFilter(filters.gearbox, item.specs.gearbox) &&
+      matchesStringFilter(filters.brands, item.specs.brand) &&
+      matchesStringFilter(filters.origin, item.specs.origin) &&
+      matchesStringFilter(filters.drivetrain, item.specs.drivetrain) &&
       matchesRangeFilter(filters.year, item.specs.year) &&
       matchesRangeFilter(filters.mileage, item.specs.mileage)
   );
@@ -85,5 +53,5 @@ export function mergeFiltersIntoUrl(filters: VehicleSpecsFilter, url: string) {
     ...Object.fromEntries(filterSearchParams),
   });
 
-  return `/vehicles?${searchParams}`;
+  return Object.fromEntries(searchParams.entries());
 }

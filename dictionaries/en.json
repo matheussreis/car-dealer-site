@@ -2,11 +2,150 @@
   "pages": {
     "home": {},
     "about": {},
-    "vehicles": {},
+    "vehicles": {
+      "title": "Vehicles",
+      "description": "Browse our selection of vehicles.",
+      "loading": "Loading...",
+      "noVehicles": "No Vehicles Available",
+      "buttons": {
+        "filters": {
+          "title": "Filters",
+          "apply": "Apply Filters",
+          "clear": "Clear",
+          "from": "From",
+          "to": "To",
+          "select": "Select..."
+        },
+        "sorting": {
+          "title": "Sort by",
+          "ascprice": "Price: Low to High",
+          "descprice": "Price: High to Low",
+          "ascdate": "Date: Old to New",
+          "descdate": "Date: New to Old",
+          "ascname": "Name: A to Z",
+          "descname": "Name: Z to A",
+          "ascyear": "Year: Old to New",
+          "descyear": "Year: New to Old"
+        },
+        "details": "View Details",
+        "previous": "Previous",
+        "next": "Next"
+      },
+      "filters": {
+        "titles": {
+          "bodyTypes": "Body Type",
+          "fuelTypes": "Fuel Type",
+          "gearbox": "Gearbox",
+          "brands": "Brand",
+          "origin": "Origin",
+          "drivetrain": "Drivetrain",
+          "year": "Year",
+          "mileage": "Mileage"
+        },
+        "options": {
+          "bodyTypes": {
+            "cityCar": "City Car",
+            "hatchback": "Hatchback",
+            "saloon": "Saloon",
+            "pickup": "Pickup",
+            "estate": "Estate",
+            "suv": "SUV",
+            "coupe": "Coupe",
+            "convertible": "Convertible",
+            "performance": "Performance",
+            "sevenSeater": "7 Seater",
+            "mpv": "Multi-Purpose Vehicle"
+          },
+          "fuelTypes": {
+            "petrol": "Petrol",
+            "diesel": "Diesel",
+            "electric": "Electric",
+            "hybrid": "Hybrid"
+          },
+          "gearbox": {
+            "manual": "Manual",
+            "automatic": "Automatic"
+          },
+          "brands": {
+            "alfaRomeo": "Alfa Romeo",
+            "audi": "Audi",
+            "bentley": "Bentley",
+            "bmw": "BMW",
+            "cadillac": "Cadillac",
+            "chevrolet": "Chevrolet",
+            "citroen": "Citroën",
+            "dacia": "Dacia",
+            "dsAutomobiles": "DS Automobiles",
+            "fiat": "Fiat",
+            "ford": "Ford",
+            "honda": "Honda",
+            "hyundai": "Hyundai",
+            "isuzu": "Isuzu",
+            "jaguar": "Jaguar",
+            "jeep": "Jeep",
+            "kia": "Kia",
+            "landRover": "Land Rover",
+            "lexus": "Lexus",
+            "maserati": "Maserati",
+            "mazda": "Mazda",
+            "mercedesBenz": "Mercedes-Benz",
+            "mini": "MINI",
+            "mitsubishi": "Mitsubishi",
+            "nissan": "Nissan",
+            "opel": "Opel",
+            "peugeot": "Peugeot",
+            "porsche": "Porsche",
+            "renault": "Renault",
+            "rollsRoyce": "Rolls-Royce",
+            "seat": "Seat",
+            "skoda": "Škoda",
+            "smart": "Smart",
+            "subaru": "Subaru",
+            "suzuki": "Suzuki",
+            "tesla": "Tesla",
+            "toyota": "Toyota",
+            "vauxhall": "Vauxhall",
+            "volkswagen": "Volkswagen",
+            "volvo": "Volvo"
+          },
+          "origin": {
+            "national": "National",
+            "imported": "Imported"
+          },
+          "drivetrain": {
+            "fwd": "Front-Wheel Drive (FWD)",
+            "rwd": "Rear-Wheel Drive (RWD)",
+            "awd": "All-Wheel Drive (AWD)"
+          }
+        }
+      }
+    },
     "vehicle": {}
   },
   "layout": {
-    "navbar": {},
-    "footer": {}
+    "navbar": {
+      "home": "Home",
+      "vehicles": "Vehicles",
+      "about": "About Us",
+      "languages": {
+        "en": "English",
+        "pt": "Portuguese"
+      }
+    },
+    "footer": {
+      "titles": {
+        "hours": "Hours",
+        "phone": "Phone",
+        "address": "Address",
+        "followUs": "Follow Us"
+      },
+      "companyName": "Acme Inc.",
+      "hours": "9am - 5pm, Mon - Fri",
+      "phone": "+1 (555) 123-4567",
+      "address": "23 Main St, Anytown USA",
+      "copyrights": "© 2024 Acme Inc. All rights reserved.",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy"
+    }
   }
 }

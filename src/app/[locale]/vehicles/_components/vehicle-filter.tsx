@@ -7,8 +7,7 @@ import {
   Popover,
 } from '@/components/ui/popover';
 import { LuFilter } from 'react-icons/lu';
-import { getFilters, mergeFiltersIntoUrl } from '@/lib/filters';
-import { useRouter } from 'next/navigation';
+import { mergeFiltersIntoUrl } from '@/lib/filters';
 import { useCallback, useState } from 'react';
 import {
   RangeFilter,
@@ -17,6 +16,9 @@ import {
 } from './vehicle-filter-fields';
 import { VehicleSpecRangeFilter, VehicleSpecsFilter } from '@/interfaces';
 import useUrlParams from '@/hooks/use-url-params';
+import { useTranslations } from 'next-intl';
+import { useRouter } from '@/i18n/navigation';
+import useFilterOptions from '@/hooks/use-filter-options';
 
 const defaultFilter: VehicleSpecsFilter = {
   mileage: { from: '', to: '' },
@@ -34,9 +36,9 @@ interface VehicleFilterProps {
 }
 
 export function VehicleFilter({ filters }: VehicleFilterProps) {
-  const filterOptions = getFilters();
-
   const router = useRouter();
+  const t = useTranslations('pages.vehicles');
+  const filterOptions = useFilterOptions();
 
   const { removeUrlParam, currentUrl } = useUrlParams();
 
@@ -63,14 +65,14 @@ export function VehicleFilter({ filters }: VehicleFilterProps) {
   );
 
   const applyFilterClickHandler = () => {
-    const redirectUrl = mergeFiltersIntoUrl(selectedFilters, currentUrl);
-    router.push(redirectUrl);
+    const queryParams = mergeFiltersIntoUrl(selectedFilters, currentUrl);
+    router.push({ pathname: '/vehicles', query: { ...queryParams } });
   };
 
   const clearFiltersClickHandler = () => {
     setSelectedFilters(defaultFilter);
-    const redirectUrl = removeUrlParam('filters');
-    router.push(redirectUrl);
+    const queryParams = removeUrlParam('filters');
+    router.push({ pathname: '/vehicles', query: { ...queryParams } });
   };
 
   return (
@@ -78,61 +80,61 @@ export function VehicleFilter({ filters }: VehicleFilterProps) {
       <PopoverTrigger asChild>
         <Button className="flex items-center gap-2" variant="outline">
           <LuFilter className="w-5 h-5" />
-          Filters
+          {t('buttons.filters.title')}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-screen max-w-[450px] p-6 rounded-lg shadow-lg md:p-8">
         <div className="grid grid-cols-1 md:lg:grid-cols-2 gap-5">
           <RangeInputFilter
-            label="Mileage"
+            label={t('filters.titles.mileage')}
             name="mileage"
             onChange={selectFilterHandler}
             value={selectedFilters.mileage}
           />
           <RangeFilter
-            label="Year"
+            label={t('filters.titles.year')}
             name="year"
             range={filterOptions.year}
             onSelect={selectFilterHandler}
             value={selectedFilters.year}
           />
           <SelectFilter
-            label="Body Type"
+            label={t('filters.titles.bodyTypes')}
             id="bodyTypes"
             options={filterOptions.bodyTypes}
             onSelect={selectFilterHandler}
             value={selectedFilters.bodyTypes}
           />
           <SelectFilter
-            label="Fuel Type"
+            label={t('filters.titles.fuelTypes')}
             id="fuelTypes"
             options={filterOptions.fuelTypes}
             onSelect={selectFilterHandler}
             value={selectedFilters.fuelTypes}
           />
           <SelectFilter
-            label="Gearbox"
+            label={t('filters.titles.gearbox')}
             id="gearbox"
             options={filterOptions.gearbox}
             onSelect={selectFilterHandler}
             value={selectedFilters.gearbox}
           />
           <SelectFilter
-            label="Brands"
+            label={t('filters.titles.brands')}
             id="brands"
             options={filterOptions.brands}
             onSelect={selectFilterHandler}
             value={selectedFilters.brands}
           />
           <SelectFilter
-            label="Origin"
+            label={t('filters.titles.origin')}
             id="origin"
             options={filterOptions.origin}
             onSelect={selectFilterHandler}
             value={selectedFilters.origin}
           />
           <SelectFilter
-            label="Drivetrain"
+            label={t('filters.titles.drivetrain')}
             id="drivetrain"
             options={filterOptions.drivetrain}
             onSelect={selectFilterHandler}
@@ -140,9 +142,11 @@ export function VehicleFilter({ filters }: VehicleFilterProps) {
           />
         </div>
         <div className="grid grid-cols-2 gap-2 mt-6">
-          <Button onClick={applyFilterClickHandler}>Apply Filter</Button>
+          <Button onClick={applyFilterClickHandler}>
+            {t('buttons.filters.apply')}
+          </Button>
           <Button onClick={clearFiltersClickHandler} variant="outline">
-            Clear
+            {t('buttons.filters.clear')}
           </Button>
         </div>
       </PopoverContent>

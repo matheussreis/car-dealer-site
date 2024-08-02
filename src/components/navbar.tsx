@@ -1,16 +1,27 @@
+'use server';
+
 import Link from 'next/link';
 import { Button } from './ui/button';
 import { SheetTrigger, SheetContent, Sheet } from '@/components/ui/sheet';
 import NavbarLink from './navbar-link';
 import { LuMountain, LuMenu } from 'react-icons/lu';
+import { getTranslations } from 'next-intl/server';
+import LanguageSwitch from './language-switch';
 
-const ITEMS = [
-  { label: 'Home', href: '/' },
-  { label: 'Vehicles', href: '/vehicles' },
-  { label: 'About Us', href: '/about' },
-];
+type NavItem = {
+  label: string;
+  href: '/' | '/about' | '/vehicles';
+};
 
-export function Navbar() {
+export async function Navbar() {
+  const t = await getTranslations('layout.navbar');
+
+  const ITEMS: NavItem[] = [
+    { label: t('home'), href: '/' },
+    { label: t('vehicles'), href: '/vehicles' },
+    { label: t('about'), href: '/about' },
+  ];
+
   return (
     <header className="bg-black text-white flex h-16 w-full items-center justify-between px-4 md:px-6">
       <Link className="flex items-center gap-2 text-lg font-semibold" href="/">
@@ -31,15 +42,21 @@ export function Navbar() {
         <SheetContent side="right">
           <nav className="grid gap-6 p-6 text-lg font-medium">
             {ITEMS.map((item) => (
-              <NavbarLink key={item.href} href={item.href} label={item.label} />
+              <NavbarLink key={item.href} href={item.href}>
+                {item.label}
+              </NavbarLink>
             ))}
+            <LanguageSwitch />
           </nav>
         </SheetContent>
       </Sheet>
       <nav className="hidden items-center gap-6 text-sm font-medium lg:flex">
         {ITEMS.map((item) => (
-          <NavbarLink key={item.href} href={item.href} label={item.label} />
+          <NavbarLink key={item.href} href={item.href}>
+            {item.label}
+          </NavbarLink>
         ))}
+        <LanguageSwitch />
       </nav>
     </header>
   );

@@ -35,11 +35,9 @@ export default function VehiclePagination({
   const pages = [];
 
   for (let i = 1; i <= numberOfPages; i++) {
-    const link = updateUrlParam('offset', `${i - 1}`);
-
     pages.push(
       <PaginationItem
-        key={link}
+        key={i - 1}
         aria-disabled={isPaginationItemDisabled}
         tabIndex={isPaginationItemDisabled ? -1 : undefined}
         className={
@@ -48,7 +46,14 @@ export default function VehiclePagination({
             : undefined
         }
       >
-        <PaginationLink href={link}>{i}</PaginationLink>
+        <PaginationLink
+          href={{
+            pathname: '/vehicles',
+            query: updateUrlParam('offset', `${i - 1}`),
+          }}
+        >
+          {i}
+        </PaginationLink>
       </PaginationItem>
     );
   }

@@ -6,6 +6,7 @@ import VehicleList from './_components/vehicle-list';
 import VehiclePagination from './_components/vehicle-pagination';
 import VehicleSorting from './_components/vehicle-sorting';
 import { VehicleFilter } from './_components/vehicle-filter';
+import { getTranslations } from 'next-intl/server';
 
 interface VehiclesPageProps {
   searchParams: { [key: string]: string | string[] | undefined };
@@ -32,14 +33,14 @@ export default async function VehiclesPage({
     filters
   );
 
+  const t = await getTranslations('pages.vehicles');
+
   return (
     <main className="container mx-auto px-4 py-8 flex-grow-1 h-full flex flex-col">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="grid gap-1">
-          <h1 className="text-2xl font-bold tracking-tight">Vehicles</h1>
-          <p className="text-gray-500 dark:text-gray-400">
-            Browse our selection of vehicles.
-          </p>
+          <h1 className="text-2xl font-bold tracking-tight">{t('title')}</h1>
+          <p className="text-gray-500 dark:text-gray-400">{t('description')}</p>
         </div>
         <div className="flex items-center gap-4">
           <VehicleFilter filters={filters} />
