@@ -1,6 +1,6 @@
 'use server';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Button } from './ui/button';
 import { SheetTrigger, SheetContent, Sheet } from '@/components/ui/sheet';
 import NavbarLink from './navbar-link';
