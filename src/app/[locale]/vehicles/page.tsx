@@ -36,7 +36,7 @@ export default async function VehiclesPage({
   const t = await getTranslations('pages.vehicles');
 
   return (
-    <main className="container mx-auto px-4 py-8 flex-grow-1 h-full flex flex-col">
+    <article className="container mx-auto px-4 py-8 flex-grow-1 h-full flex flex-col">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="grid gap-1">
           <h1 className="text-2xl font-bold tracking-tight">{t('title')}</h1>
@@ -55,6 +55,6 @@ export default async function VehiclesPage({
           totalCount={totalCount}
         />
       </div>
-    </main>
+    </article>
   );
 }

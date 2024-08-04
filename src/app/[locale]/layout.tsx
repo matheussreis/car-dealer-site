@@ -11,7 +11,7 @@ export default async function AppLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <Navbar />
-      {children}
+      <main className="flex-grow">{children}</main>
       <Footer />
     </NextIntlClientProvider>
   );
