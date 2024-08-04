@@ -4,7 +4,7 @@
     "dateEntered": "2024-05-07",
     "name": "Mercedes A200",
     "description": "Compact luxury car",
-    "imageSrc": "/vehicles/mercedes_a200.jpg",
+    "imageSrc": "/images/mercedes_a200.jpg",
     "specs": {
       "horsePower": 188,
       "mileage": 35,
@@ -31,7 +31,7 @@
     "dateEntered": "2024-05-07",
     "name": "Smart Fortwo",
     "description": "Compact city car",
-    "imageSrc": "/vehicles/smart-fortwo.jpg",
+    "imageSrc": "/images/smart-fortwo.jpg",
     "specs": {
       "horsePower": 89,
       "mileage": 40,
@@ -54,7 +54,7 @@
     "dateEntered": "2024-05-07",
     "name": "BMW 4 Series 420d",
     "description": "Luxury coupe",
-    "imageSrc": "/vehicles/bmw_series_4.jpg",
+    "imageSrc": "/images/bmw_series_4.jpg",
     "specs": {
       "horsePower": 188,
       "mileage": 30,
@@ -77,7 +77,7 @@
     "dateEntered": "2024-05-07",
     "name": "Audi S5 Coupe",
     "description": "High-performance coupe",
-    "imageSrc": "/vehicles/audi_s4.jpg",
+    "imageSrc": "/images/audi_s4.jpg",
     "specs": {
       "horsePower": 349,
       "mileage": 25,
@@ -104,7 +104,7 @@
     "dateEntered": "2024-05-07",
     "name": "Volkswagen Beatle 1969",
     "description": "Iconic compact car",
-    "imageSrc": "/vehicles/beatle.jpg",
+    "imageSrc": "/images/beatle.jpg",
     "specs": {
       "horsePower": 53,
       "mileage": 20,
@@ -127,7 +127,7 @@
     "dateEntered": "2024-05-07",
     "name": "Audi TT 2006 Roadster",
     "description": "Sporty convertible",
-    "imageSrc": "/vehicles/audi_tt.jpeg",
+    "imageSrc": "/images/audi_tt.jpeg",
     "specs": {
       "horsePower": 247,
       "mileage": 25,
@@ -150,7 +150,7 @@
     "dateEntered": "2024-05-07",
     "name": "Honda Civic 1995 Coupe",
     "description": "Compact coupe",
-    "imageSrc": "/vehicles/honda_civic.jpeg",
+    "imageSrc": "/images/honda_civic.jpeg",
     "specs": {
       "horsePower": 125,
       "mileage": 28,
@@ -173,7 +173,7 @@
     "dateEntered": "2024-05-07",
     "name": "Ford Focus",
     "description": "Compact sedan",
-    "imageSrc": "/vehicles/ford_focus.jpg",
+    "imageSrc": "/images/ford_focus.jpg",
     "specs": {
       "horsePower": 160,
       "mileage": 30,
@@ -200,7 +200,7 @@
     "dateEntered": "2024-05-07",
     "name": "Maserati GranTurismo V8",
     "description": "Luxury grand tourer",
-    "imageSrc": "/vehicles/maserati_granturismo.jpg",
+    "imageSrc": "/images/maserati_granturismo.jpg",
     "specs": {
       "horsePower": 454,
       "mileage": 15,
@@ -223,7 +223,7 @@
     "dateEntered": "2024-05-07",
     "name": "Peugeot 407 Coupe",
     "description": "Elegant coupe",
-    "imageSrc": "/vehicles/peugeot_407_coupe.jpg",
+    "imageSrc": "/images/peugeot_407_coupe.jpg",
     "specs": {
       "horsePower": 138,
       "mileage": 25,
