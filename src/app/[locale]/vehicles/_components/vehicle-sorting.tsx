@@ -1,7 +1,7 @@
 'use client';
 
 import { SortingType } from '@/enums';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   DropdownMenuTrigger,
   DropdownMenuRadioItem,
@@ -11,19 +11,9 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
 import { LuArrowUpDown } from 'react-icons/lu';
-import Link from 'next/link';
 import useUrlParams from '@/hooks/use-url-params';
-
-const SORTING_OPTIONS: { [key in SortingType]: string } = {
-  [SortingType.AscendingPrice]: 'Price: Low to High',
-  [SortingType.DescendingPrice]: 'Price: High to Low',
-  [SortingType.AscendingDate]: 'Date: Old to New',
-  [SortingType.DescendingDate]: 'Date: New to Old',
-  [SortingType.AscendingName]: 'Name: A to Z',
-  [SortingType.DescendingName]: 'Name: Z to A',
-  [SortingType.AscendingYear]: 'Year: Old to New',
-  [SortingType.DescendingYear]: 'Year: New to Old',
-};
+import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 
 interface VehicleSortingProps {
   sorting: SortingType;
@@ -35,6 +25,14 @@ export default function VehicleSorting({ sorting }: VehicleSortingProps) {
   );
 
   const { updateUrlParam } = useUrlParams();
+  const t = useTranslations('pages.vehicles.buttons.sorting');
+
+  const SORTING_OPTIONS: { [key in SortingType]: string } = useMemo(() => {
+    return Object.values(SortingType).reduce((options, type) => {
+      options[type] = t(type);
+      return options;
+    }, {} as { [key in SortingType]: string });
+  }, [t]);
 
   const valueChangeHandler = useCallback((value: string) => {
     setSelectedSorting(value as unknown as SortingType);
@@ -49,7 +47,7 @@ export default function VehicleSorting({ sorting }: VehicleSortingProps) {
       <DropdownMenuTrigger asChild>
         <Button className="shrink-0" variant="outline">
           <LuArrowUpDown className="w-4 h-4 mr-2" />
-          {SORTING_OPTIONS[selectedSorting] || 'Sort by'}
+          {SORTING_OPTIONS[selectedSorting] || t('title')}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[200px]">
@@ -60,7 +58,12 @@ export default function VehicleSorting({ sorting }: VehicleSortingProps) {
           {Object.keys(SORTING_OPTIONS).map((option) => {
             return (
               <DropdownMenuRadioItem key={option} value={option.toString()}>
-                <Link href={updateUrlParam('sorting', `${option}`)}>
+                <Link
+                  href={{
+                    pathname: '/vehicles',
+                    query: updateUrlParam('sorting', `${option}`),
+                  }}
+                >
                   {SORTING_OPTIONS[option as SortingType]}
                 </Link>
               </DropdownMenuRadioItem>

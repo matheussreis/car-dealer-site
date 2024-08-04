@@ -1,7 +1,10 @@
+'use server';
+
 import { formatCurrency } from '@/lib/formatters';
 import { Vehicle } from '@/interfaces';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
 
 interface VehicleItemProps {
   id: string;
@@ -9,9 +12,17 @@ interface VehicleItemProps {
   bodyType?: string;
   price: number;
   src?: string;
+  linkLabel: string;
 }
 
-function VehicleItem({ id, name, bodyType, price, src }: VehicleItemProps) {
+function VehicleItem({
+  id,
+  name,
+  bodyType,
+  price,
+  src,
+  linkLabel,
+}: VehicleItemProps) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <Image
@@ -33,7 +44,7 @@ function VehicleItem({ id, name, bodyType, price, src }: VehicleItemProps) {
           className="inline-flex items-center justify-center mt-4 px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500"
           href={`/vehicles/${id}`}
         >
-          View Details
+          {linkLabel}
         </Link>
       </div>
     </div>
@@ -45,11 +56,16 @@ interface VehicleListProps {
   isPending: boolean;
 }
 
-export default function VehicleList({ vehicles, isPending }: VehicleListProps) {
+export default async function VehicleList({
+  vehicles,
+  isPending,
+}: VehicleListProps) {
+  const t = await getTranslations('pages.vehicles');
+
   if (isPending) {
     return (
       <p className="flex justify-center w-full h-full col-span-4 my-10 align-middle">
-        Loading...
+        {t('loading')}
       </p>
     );
   }
@@ -65,12 +81,13 @@ export default function VehicleList({ vehicles, isPending }: VehicleListProps) {
             bodyType={vehicle.specs.bodyType}
             price={vehicle.specs.price}
             src={vehicle.imageSrc}
+            linkLabel={t('buttons.details')}
           />
         ))}
 
       {vehicles.length === 0 && isPending === false && (
         <div className="flex justify-center w-full h-full col-span-4 my-10 align-middle">
-          <p>No Vehicles Available</p>
+          <p>{t('noVehicles')}</p>
         </div>
       )}
     </div>

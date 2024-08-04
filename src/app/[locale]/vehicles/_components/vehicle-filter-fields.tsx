@@ -10,6 +10,7 @@ import {
   Select,
 } from '@/components/ui/select';
 import { VehicleSpecRangeFilter } from '@/interfaces';
+import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { LuX } from 'react-icons/lu';
 
@@ -43,6 +44,8 @@ export function RangeFilter({
   onSelect,
   value,
 }: RangeFilterProps) {
+  const t = useTranslations('pages.vehicles.buttons.filters');
+
   const selectFilterHandler = (src: string, value: string) => {
     onSelect(name, { [src]: Number(value) });
   };
@@ -55,7 +58,7 @@ export function RangeFilter({
           value={value.from?.toString()}
         >
           <SelectTrigger>
-            <SelectValue placeholder="From" />
+            <SelectValue placeholder={t('from')} />
           </SelectTrigger>
           <SelectContent id={`${name}-from`}>
             {range.map((item) => (
@@ -70,7 +73,7 @@ export function RangeFilter({
           value={value.to?.toString()}
         >
           <SelectTrigger>
-            <SelectValue placeholder="To" />
+            <SelectValue placeholder={t('to')} />
           </SelectTrigger>
           <SelectContent id={`${name}-to`}>
             {[...range].reverse().map((item) => (
@@ -102,6 +105,8 @@ export function SelectFilter({
   onSelect,
   value,
 }: SelectFilterProps) {
+  const t = useTranslations('pages.vehicles.buttons.filters');
+
   const [selectValue, setSelectValue] = useState<string>(value || '');
 
   useEffect(() => {
@@ -123,7 +128,7 @@ export function SelectFilter({
           value={selectValue}
         >
           <SelectTrigger>
-            <SelectValue placeholder="Select..." />
+            <SelectValue placeholder={t('select')} />
           </SelectTrigger>
           <SelectContent id={id}>
             {Object.keys(options).map((option) => (
@@ -159,6 +164,8 @@ export function RangeInputFilter({
   onChange,
   value,
 }: RangeInputFilterProps) {
+  const t = useTranslations('pages.vehicles.buttons.filters');
+
   const [fieldValue, setFieldValue] = useState<VehicleSpecRangeFilter>(
     value || { from: '', to: '' }
   );
@@ -181,7 +188,7 @@ export function RangeInputFilter({
           <Input
             type="number"
             name={`${name}-from`}
-            placeholder="From"
+            placeholder={t('from')}
             className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             value={fieldValue?.from}
             onChange={(e) => changeInputHandler('from', e.target.value)}
@@ -200,7 +207,7 @@ export function RangeInputFilter({
           <Input
             type="number"
             name={`${name}-to`}
-            placeholder="To"
+            placeholder={t('to')}
             className="[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             value={fieldValue?.to}
             onChange={(e) => changeInputHandler('to', e.target.value)}
