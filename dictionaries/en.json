@@ -169,6 +169,12 @@
       "additionalDetails": {
         "title": "Additional Details"
       }
+    },
+    "notFound": {
+      "title": "Page Not Found",
+      "header": "Oops, page not found!",
+      "description": "The page you're looking for doesn't exist. Check the URL or go back to the homepage.",
+      "redirectButton": "Go to Homepage"
     }
   },
   "layout": {

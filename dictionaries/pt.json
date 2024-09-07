@@ -169,6 +169,12 @@
       "additionalDetails": {
         "title": "Informações Adicionais"
       }
+    },
+    "notFound": {
+      "title": "Página não encontrada",
+      "header": "Ops, página não encontrada!",
+      "description": "A página que procura não existe. Verifique a URL ou volte à página inicial.",
+      "redirectButton": "Ir para a Página Inicial"
     }
   },
   "layout": {
