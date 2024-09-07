@@ -23,10 +23,10 @@ import useFilterOptions from '@/hooks/use-filter-options';
 const defaultFilter: VehicleSpecsFilter = {
   mileage: { from: '', to: '' },
   year: { from: '', to: '' },
-  bodyTypes: '',
-  fuelTypes: '',
+  bodyType: '',
+  fuelType: '',
   gearbox: '',
-  brands: '',
+  brand: '',
   origin: '',
   drivetrain: '',
 };
@@ -99,18 +99,18 @@ export function VehicleFilter({ filters }: VehicleFilterProps) {
             value={selectedFilters.year}
           />
           <SelectFilter
-            label={t('filters.titles.bodyTypes')}
-            id="bodyTypes"
-            options={filterOptions.bodyTypes}
+            label={t('filters.titles.bodyType')}
+            id="bodyType"
+            options={filterOptions.bodyType}
             onSelect={selectFilterHandler}
-            value={selectedFilters.bodyTypes}
+            value={selectedFilters.bodyType}
           />
           <SelectFilter
-            label={t('filters.titles.fuelTypes')}
-            id="fuelTypes"
-            options={filterOptions.fuelTypes}
+            label={t('filters.titles.fuelType')}
+            id="fuelType"
+            options={filterOptions.fuelType}
             onSelect={selectFilterHandler}
-            value={selectedFilters.fuelTypes}
+            value={selectedFilters.fuelType}
           />
           <SelectFilter
             label={t('filters.titles.gearbox')}
@@ -120,11 +120,11 @@ export function VehicleFilter({ filters }: VehicleFilterProps) {
             value={selectedFilters.gearbox}
           />
           <SelectFilter
-            label={t('filters.titles.brands')}
-            id="brands"
-            options={filterOptions.brands}
+            label={t('filters.titles.brand')}
+            id="brand"
+            options={filterOptions.brand}
             onSelect={selectFilterHandler}
-            value={selectedFilters.brands}
+            value={selectedFilters.brand}
           />
           <SelectFilter
             label={t('filters.titles.origin')}

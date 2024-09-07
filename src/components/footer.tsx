@@ -31,15 +31,15 @@ export async function Footer() {
             <div className="flex space-x-4">
               <Link className="hover:text-gray-300" href="#">
                 <LuTwitter className="h-6 w-6" />
-                <span className="sr-only">Twitter</span>
+                <span className="sr-only">{t('social.twitter')}</span>
               </Link>
               <Link className="hover:text-gray-300" href="#">
                 <LuFacebook className="h-6 w-6" />
-                <span className="sr-only">Facebook</span>
+                <span className="sr-only">{t('social.facebook')}</span>
               </Link>
               <Link className="hover:text-gray-300" href="#">
                 <LuInstagram className="h-6 w-6" />
-                <span className="sr-only">Instagram</span>
+                <span className="sr-only">{t('social.instagram')}</span>
               </Link>
             </div>
           </div>

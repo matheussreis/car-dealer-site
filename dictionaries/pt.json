@@ -1,7 +1,14 @@
 {
+  "site": {
+    "name": "Acme Inc."
+  },
   "pages": {
-    "home": {},
-    "about": {},
+    "home": {
+      "title": "início"
+    },
+    "about": {
+      "title": "Sobre Nós"
+    },
     "vehicles": {
       "title": "Veículos",
       "description": "Explore a nossa seleção de veículos.",
@@ -33,17 +40,17 @@
       },
       "filters": {
         "titles": {
-          "bodyTypes": "Tipo de Carroçaria",
-          "fuelTypes": "Tipo de Combustível",
+          "bodyType": "Tipo de Carroçaria",
+          "fuelType": "Tipo de Combustível",
           "gearbox": "Caixa de Velocidades",
-          "brands": "Marca",
+          "brand": "Marca",
           "origin": "Origem",
           "drivetrain": "Tipo de Tração",
           "year": "Ano",
           "mileage": "Quilometragem"
         },
         "options": {
-          "bodyTypes": {
+          "bodyType": {
             "cityCar": "Carro citadino",
             "hatchback": "Hatchback",
             "saloon": "Sedan",
@@ -56,7 +63,7 @@
             "sevenSeater": "7 Lugares",
             "mpv": "Veículo Multiuso"
           },
-          "fuelTypes": {
+          "fuelType": {
             "petrol": "Gasolina",
             "diesel": "Diesel",
             "electric": "Elétrico",
@@ -66,7 +73,7 @@
             "manual": "Manual",
             "automatic": "Automático"
           },
-          "brands": {
+          "brand": {
             "alfaRomeo": "Alfa Romeo",
             "audi": "Audi",
             "bentley": "Bentley",
@@ -88,7 +95,7 @@
             "lexus": "Lexus",
             "maserati": "Maserati",
             "mazda": "Mazda",
-            "mercedesBenz": "Mercedes-Benz",
+            "mercedes": "Mercedes-Benz",
             "mini": "MINI",
             "mitsubishi": "Mitsubishi",
             "nissan": "Nissan",
@@ -116,11 +123,53 @@
             "fwd": "Tração dianteira (FWD)",
             "rwd": "Tração traseira (RWD)",
             "awd": "Tração integral (AWD)"
+          },
+          "color": {
+            "red": "Vermelho",
+            "blue": "Azul",
+            "green": "Verde",
+            "yellow": "Amarelo",
+            "orange": "Laranja",
+            "purple": "Roxo",
+            "black": "Preto",
+            "white": "Branco",
+            "gray": "Cinza",
+            "brown": "Marrom",
+            "pink": "Rosa",
+            "silver": "Prata",
+            "beige": "Bege",
+            "navyBlue": "Azul Marinho",
+            "olive": "Oliva",
+            "teal": "Verde-azulado"
           }
         }
       }
     },
-    "vehicle": {}
+    "vehicle": {
+      "specs": {
+        "horsePower": "Potência",
+        "mileage": "Quilometragem",
+        "price": "Preço",
+        "fuelType": "Tipo de Combustível",
+        "bodyType": "Tipo de Carroçaria",
+        "engine": "Motor",
+        "gearbox": "Caixa de Velocidades",
+        "seats": "Assentos",
+        "doors": "Portas",
+        "brand": "Marca",
+        "origin": "Origem",
+        "drivetrain": "Tração",
+        "year": "Ano",
+        "color": "Cor",
+        "wheelSize": "Jantes",
+        "previousOwners": "Donos Anteriores",
+        "co2Emissions": "Emissões CO2",
+        "warranty": "Garantia"
+      },
+      "additionalDetails": {
+        "title": "Informações Adicionais"
+      }
+    }
   },
   "layout": {
     "navbar": {
@@ -145,7 +194,18 @@
       "address": "23 Main St, Anytown USA",
       "copyrights": "© 2024 Acme Inc. Todos os Direitos Reservados",
       "terms": "Termos de Serviço",
-      "privacy": "Política de Privacidade"
+      "privacy": "Política de Privacidade",
+      "social": {
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "instagram": "Instagram"
+      }
     }
+  },
+  "units": {
+    "horsePower": "Cv",
+    "mileage": "Km",
+    "co2Emissions": "g/km",
+    "years": "Anos"
   }
 }

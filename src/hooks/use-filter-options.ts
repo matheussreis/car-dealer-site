@@ -1,28 +1,8 @@
 'use client';
 
-import { Vehicle } from '@/interfaces';
 import { useTranslations } from 'next-intl';
-import vehicles from '../../public/data.json';
 import { createArrayFromRange } from '@/lib/utils';
-
-function getYearFilter() {
-  let list = [...vehicles] as Array<Vehicle>;
-
-  let newest = 0;
-  let oldest = new Date().getFullYear();
-
-  list.forEach((vehicle) => {
-    if (vehicle.specs.year > newest) {
-      newest = vehicle.specs.year;
-    }
-
-    if (vehicle.specs.year < oldest) {
-      oldest = vehicle.specs.year;
-    }
-  });
-
-  return createArrayFromRange(newest, oldest);
-}
+import { getYearFilter } from '@/lib/filters';
 
 export default function useFilterOptions() {
   const t = useTranslations('pages.vehicles.filters.options');
@@ -31,70 +11,70 @@ export default function useFilterOptions() {
     year: getYearFilter(),
     doors: createArrayFromRange(1, 7),
     seats: createArrayFromRange(1, 10),
-    bodyTypes: {
-      cityCar: t('bodyTypes.cityCar'),
-      hatchback: t('bodyTypes.hatchback'),
-      saloon: t('bodyTypes.saloon'),
-      pickup: t('bodyTypes.pickup'),
-      estate: t('bodyTypes.estate'),
-      suv: t('bodyTypes.suv'),
-      coupe: t('bodyTypes.coupe'),
-      convertible: t('bodyTypes.convertible'),
-      performance: t('bodyTypes.performance'),
-      sevenSeater: t('bodyTypes.sevenSeater'),
-      mpv: t('bodyTypes.mpv'),
+    bodyType: {
+      cityCar: t('bodyType.cityCar'),
+      hatchback: t('bodyType.hatchback'),
+      saloon: t('bodyType.saloon'),
+      pickup: t('bodyType.pickup'),
+      estate: t('bodyType.estate'),
+      suv: t('bodyType.suv'),
+      coupe: t('bodyType.coupe'),
+      convertible: t('bodyType.convertible'),
+      performance: t('bodyType.performance'),
+      sevenSeater: t('bodyType.sevenSeater'),
+      mpv: t('bodyType.mpv'),
     },
-    fuelTypes: {
-      petrol: t('fuelTypes.petrol'),
-      diesel: t('fuelTypes.diesel'),
-      electric: t('fuelTypes.electric'),
-      hybrid: t('fuelTypes.hybrid'),
+    fuelType: {
+      petrol: t('fuelType.petrol'),
+      diesel: t('fuelType.diesel'),
+      electric: t('fuelType.electric'),
+      hybrid: t('fuelType.hybrid'),
     },
     gearbox: {
       manual: t('gearbox.manual'),
       automatic: t('gearbox.automatic'),
     },
-    brands: {
-      alfaRomeo: t('brands.alfaRomeo'),
-      audi: t('brands.audi'),
-      bentley: t('brands.bentley'),
-      bmw: t('brands.bmw'),
-      cadillac: t('brands.cadillac'),
-      chevrolet: t('brands.chevrolet'),
-      citroen: t('brands.citroen'),
-      dacia: t('brands.dacia'),
-      dsAutomobiles: t('brands.dsAutomobiles'),
-      fiat: t('brands.fiat'),
-      ford: t('brands.ford'),
-      honda: t('brands.honda'),
-      hyundai: t('brands.hyundai'),
-      isuzu: t('brands.isuzu'),
-      jaguar: t('brands.jaguar'),
-      jeep: t('brands.jeep'),
-      kia: t('brands.kia'),
-      landRover: t('brands.landRover'),
-      lexus: t('brands.lexus'),
-      maserati: t('brands.maserati'),
-      mazda: t('brands.mazda'),
-      mercedesBenz: t('brands.mercedesBenz'),
-      mini: t('brands.mini'),
-      mitsubishi: t('brands.mitsubishi'),
-      nissan: t('brands.nissan'),
-      opel: t('brands.opel'),
-      peugeot: t('brands.peugeot'),
-      porsche: t('brands.porsche'),
-      renault: t('brands.renault'),
-      rollsRoyce: t('brands.rollsRoyce'),
-      seat: t('brands.seat'),
-      skoda: t('brands.skoda'),
-      smart: t('brands.smart'),
-      subaru: t('brands.subaru'),
-      suzuki: t('brands.suzuki'),
-      tesla: t('brands.tesla'),
-      toyota: t('brands.toyota'),
-      vauxhall: t('brands.vauxhall'),
-      volkswagen: t('brands.volkswagen'),
-      volvo: t('brands.volvo'),
+    brand: {
+      alfaRomeo: t('brand.alfaRomeo'),
+      audi: t('brand.audi'),
+      bentley: t('brand.bentley'),
+      bmw: t('brand.bmw'),
+      cadillac: t('brand.cadillac'),
+      chevrolet: t('brand.chevrolet'),
+      citroen: t('brand.citroen'),
+      dacia: t('brand.dacia'),
+      dsAutomobiles: t('brand.dsAutomobiles'),
+      fiat: t('brand.fiat'),
+      ford: t('brand.ford'),
+      honda: t('brand.honda'),
+      hyundai: t('brand.hyundai'),
+      isuzu: t('brand.isuzu'),
+      jaguar: t('brand.jaguar'),
+      jeep: t('brand.jeep'),
+      kia: t('brand.kia'),
+      landRover: t('brand.landRover'),
+      lexus: t('brand.lexus'),
+      maserati: t('brand.maserati'),
+      mazda: t('brand.mazda'),
+      mercedes: t('brand.mercedes'),
+      mini: t('brand.mini'),
+      mitsubishi: t('brand.mitsubishi'),
+      nissan: t('brand.nissan'),
+      opel: t('brand.opel'),
+      peugeot: t('brand.peugeot'),
+      porsche: t('brand.porsche'),
+      renault: t('brand.renault'),
+      rollsRoyce: t('brand.rollsRoyce'),
+      seat: t('brand.seat'),
+      skoda: t('brand.skoda'),
+      smart: t('brand.smart'),
+      subaru: t('brand.subaru'),
+      suzuki: t('brand.suzuki'),
+      tesla: t('brand.tesla'),
+      toyota: t('brand.toyota'),
+      vauxhall: t('brand.vauxhall'),
+      volkswagen: t('brand.volkswagen'),
+      volvo: t('brand.volvo'),
     },
     origin: {
       national: t('origin.national'),

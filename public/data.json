@@ -4,26 +4,32 @@
     "dateEntered": "2024-05-07",
     "name": "Mercedes A200",
     "description": "Compact luxury car",
-    "imageSrc": "/images/mercedes_a200.jpg",
+    "cover": "/images/mercedes_a200.jpg",
     "specs": {
       "horsePower": 188,
-      "mileage": 35,
+      "mileage": 35000,
       "price": 35000,
       "fuelType": "petrol",
-      "bodyType": "sedan",
-      "engine": 2.0,
+      "bodyType": "saloon",
+      "engine": "2.0",
       "gearbox": "automatic",
       "seats": 5,
       "doors": 4,
       "brand": "mercedes",
       "origin": "national",
       "drivetrain": "fwd",
-      "year": 2023
+      "year": 2023,
+      "color": "gray",
+      "wheelSize": 17,
+      "previousOwners": 1,
+      "co2Emissions": 127,
+      "warranty": 2
     },
-    "features": [
-      "Leather Seats",
-      "Panoramic Sunroof",
-      "Touchscreen Infotainment"
+    "images": [
+      "/images/mercedes_a200.jpg",
+      "/images/mercedes_a200.jpg",
+      "/images/mercedes_a200.jpg",
+      "/images/mercedes_a200.jpg"
     ]
   },
   {
@@ -31,72 +37,98 @@
     "dateEntered": "2024-05-07",
     "name": "Smart Fortwo",
     "description": "Compact city car",
-    "imageSrc": "/images/smart-fortwo.jpg",
+    "cover": "/images/smart-fortwo.jpg",
     "specs": {
       "horsePower": 89,
-      "mileage": 40,
+      "mileage": 40000,
       "price": 20000,
       "fuelType": "electric",
       "bodyType": "hatchback",
-      "engine": 0.0,
+      "engine": "0.0",
       "gearbox": "automatic",
       "seats": 2,
       "doors": 2,
       "brand": "smart",
       "origin": "national",
       "drivetrain": "rwd",
-      "year": 2024
+      "year": 2024,
+      "color": "orange",
+      "wheelSize": 16,
+      "previousOwners": 1,
+      "co2Emissions": 93,
+      "warranty": 2
     },
-    "features": ["Electric Drive", "Compact Size", "Easy Parking"]
+    "images": [
+      "/images/smart-fortwo.jpg",
+      "/images/smart-fortwo.jpg",
+      "/images/smart-fortwo.jpg",
+      "/images/smart-fortwo.jpg"
+    ]
   },
   {
     "id": "6ab5e912-c30c-4070-b6e1-3fe823550435",
     "dateEntered": "2024-05-07",
     "name": "BMW 4 Series 420d",
     "description": "Luxury coupe",
-    "imageSrc": "/images/bmw_series_4.jpg",
+    "cover": "/images/bmw_series_4.jpg",
     "specs": {
       "horsePower": 188,
-      "mileage": 30,
+      "mileage": 30000,
       "price": 45000,
       "fuelType": "diesel",
       "bodyType": "Coupe",
-      "engine": 2.0,
+      "engine": "2.0",
       "gearbox": "automatic",
       "seats": 4,
       "doors": 2,
       "brand": "bmw",
       "origin": "national",
       "drivetrain": "rwd",
-      "year": 2022
+      "year": 2022,
+      "color": "navyBlue",
+      "wheelSize": 17,
+      "previousOwners": 1,
+      "co2Emissions": 106,
+      "warranty": 2
     },
-    "features": ["Sporty Design", "Luxurious Interior", "Advanced Technology"]
+    "images": [
+      "/images/bmw_series_4.jpg",
+      "/images/bmw_series_4.jpg",
+      "/images/bmw_series_4.jpg",
+      "/images/bmw_series_4.jpg"
+    ]
   },
   {
     "id": "b2656177-e1e6-47aa-8431-9297846a05b2",
     "dateEntered": "2024-05-07",
     "name": "Audi S5 Coupe",
     "description": "High-performance coupe",
-    "imageSrc": "/images/audi_s4.jpg",
+    "cover": "/images/audi_s4.jpg",
     "specs": {
       "horsePower": 349,
-      "mileage": 25,
+      "mileage": 25000,
       "price": 60000,
       "fuelType": "petrol",
       "bodyType": "coupe",
-      "engine": 3.0,
+      "engine": "3.0",
       "gearbox": "automatic",
       "seats": 4,
       "doors": 2,
       "brand": "audi",
       "origin": "national",
       "drivetrain": "fwd",
-      "year": 2024
+      "year": 2024,
+      "color": "blue",
+      "wheelSize": 18,
+      "previousOwners": 1,
+      "co2Emissions": 174,
+      "warranty": 2
     },
-    "features": [
-      "High Performance Engine",
-      "Quattro All-wheel Drive",
-      "Luxury Interior"
+    "images": [
+      "/images/audi_s4.jpg",
+      "/images/audi_s4.jpg",
+      "/images/audi_s4.jpg",
+      "/images/audi_s4.jpg"
     ]
   },
   {
@@ -104,95 +136,131 @@
     "dateEntered": "2024-05-07",
     "name": "Volkswagen Beatle 1969",
     "description": "Iconic compact car",
-    "imageSrc": "/images/beatle.jpg",
+    "cover": "/images/beatle.jpg",
     "specs": {
       "horsePower": 53,
-      "mileage": 20,
+      "mileage": 200000,
       "price": 15000,
       "fuelType": "petrol",
       "bodyType": "coupe",
-      "engine": 1.5,
+      "engine": "1.5",
       "gearbox": "manual",
       "seats": 4,
       "doors": 2,
       "brand": "volkswagen",
       "origin": "imported",
       "drivetrain": "rwd",
-      "year": 1969
+      "year": 1969,
+      "color": "yellow",
+      "wheelSize": 13,
+      "previousOwners": 3,
+      "co2Emissions": 250,
+      "warranty": 2
     },
-    "features": ["Classic Design", "Air-cooled Engine", "Timeless Appeal"]
+    "images": [
+      "/images/beatle.jpg",
+      "/images/beatle.jpg",
+      "/images/beatle.jpg",
+      "/images/beatle.jpg"
+    ]
   },
   {
     "id": "d6495b89-0253-462b-9d5f-c7a22db34e65",
     "dateEntered": "2024-05-07",
     "name": "Audi TT 2006 Roadster",
     "description": "Sporty convertible",
-    "imageSrc": "/images/audi_tt.jpeg",
+    "cover": "/images/audi_tt.jpeg",
     "specs": {
       "horsePower": 247,
-      "mileage": 25,
+      "mileage": 175000,
       "price": 25000,
       "fuelType": "petrol",
       "bodyType": "convertible",
-      "engine": 2.0,
+      "engine": "2.0",
       "gearbox": "automatic",
       "seats": 2,
       "doors": 2,
       "brand": "audi",
       "origin": "national",
       "drivetrain": "fwd",
-      "year": 2006
+      "year": 2006,
+      "color": "silver",
+      "wheelSize": 17,
+      "previousOwners": 2,
+      "co2Emissions": 184,
+      "warranty": 2
     },
-    "features": ["Convertible Top", "Sporty Handling", "Premium Sound System"]
+    "images": [
+      "/images/audi_tt.jpeg",
+      "/images/audi_tt.jpeg",
+      "/images/audi_tt.jpeg",
+      "/images/audi_tt.jpeg"
+    ]
   },
   {
     "id": "ad887be9-7df2-4df2-bb50-3344b6b6d40d",
     "dateEntered": "2024-05-07",
     "name": "Honda Civic 1995 Coupe",
     "description": "Compact coupe",
-    "imageSrc": "/images/honda_civic.jpeg",
+    "cover": "/images/honda_civic.jpeg",
     "specs": {
       "horsePower": 125,
-      "mileage": 28,
+      "mileage": 280000,
       "price": 8000,
       "fuelType": "petrol",
       "bodyType": "coupe",
-      "engine": 1.6,
+      "engine": "1.6",
       "gearbox": "manual",
       "seats": 5,
       "doors": 2,
       "brand": "honda",
       "origin": "national",
       "drivetrain": "fwd",
-      "year": 1995
+      "year": 1995,
+      "color": "black",
+      "wheelSize": 15,
+      "previousOwners": 3,
+      "co2Emissions": 150,
+      "warranty": 2
     },
-    "features": ["Reliable Engine", "Sporty Design", "Compact Size"]
+    "images": [
+      "/images/honda_civic.jpeg",
+      "/images/honda_civic.jpeg",
+      "/images/honda_civic.jpeg",
+      "/images/honda_civic.jpeg"
+    ]
   },
   {
     "id": "3f19b874-3fa0-4210-bdb9-61b1f84001e3",
     "dateEntered": "2024-05-07",
     "name": "Ford Focus",
     "description": "Compact sedan",
-    "imageSrc": "/images/ford_focus.jpg",
+    "cover": "/images/ford_focus.jpg",
     "specs": {
       "horsePower": 160,
-      "mileage": 30,
+      "mileage": 70000,
       "price": 25000,
       "fuelType": "petrol",
-      "bodyType": "sedan",
-      "engine": 1.5,
+      "bodyType": "saloon",
+      "engine": "1.5",
       "gearbox": "automatic",
       "seats": 5,
       "doors": 4,
       "brand": "ford",
       "origin": "national",
       "drivetrain": "fwd",
-      "year": 2018
+      "year": 2018,
+      "color": "gray",
+      "wheelSize": 15,
+      "previousOwners": 1,
+      "co2Emissions": 120,
+      "warranty": 2
     },
-    "features": [
-      "Advanced Safety Features",
-      "Fuel Efficiency",
-      "Spacious Interior"
+    "images": [
+      "/images/ford_focus.jpg",
+      "/images/ford_focus.jpg",
+      "/images/ford_focus.jpg",
+      "/images/ford_focus.jpg"
     ]
   },
   {
@@ -200,45 +268,65 @@
     "dateEntered": "2024-05-07",
     "name": "Maserati GranTurismo V8",
     "description": "Luxury grand tourer",
-    "imageSrc": "/images/maserati_granturismo.jpg",
+    "cover": "/images/maserati_granturismo.jpg",
     "specs": {
       "horsePower": 454,
-      "mileage": 15,
+      "mileage": 35000,
       "price": 150000,
       "fuelType": "petrol",
       "bodyType": "coupe",
-      "engine": 4.7,
+      "engine": "4.7",
       "gearbox": "automatic",
       "seats": 4,
       "doors": 2,
       "brand": "maserati",
       "origin": "imported",
       "drivetrain": "rwd",
-      "year": 2008
+      "year": 2008,
+      "color": "black",
+      "wheelSize": 18,
+      "previousOwners": 1,
+      "co2Emissions": 331,
+      "warranty": 2
     },
-    "features": ["Powerful V8 Engine", "Luxurious Interior", "Exquisite Design"]
+    "images": [
+      "/images/maserati_granturismo.jpg",
+      "/images/maserati_granturismo.jpg",
+      "/images/maserati_granturismo.jpg",
+      "/images/maserati_granturismo.jpg"
+    ]
   },
   {
     "id": "91e164cf-c96e-4d67-b446-e87508e43b7f",
     "dateEntered": "2024-05-07",
     "name": "Peugeot 407 Coupe",
     "description": "Elegant coupe",
-    "imageSrc": "/images/peugeot_407_coupe.jpg",
+    "cover": "/images/peugeot_407_coupe.jpg",
     "specs": {
       "horsePower": 138,
-      "mileage": 25,
+      "mileage": 90000,
       "price": 18000,
       "fuelType": "diesel",
       "bodyType": "coupe",
-      "engine": 2.0,
+      "engine": "2.0",
       "gearbox": "automatic",
       "seats": 4,
       "doors": 2,
       "brand": "peugeot",
       "origin": "national",
       "drivetrain": "fwd",
-      "year": 2009
+      "year": 2009,
+      "color": "red",
+      "wheelSize": 17,
+      "previousOwners": 2,
+      "co2Emissions": 169,
+      "warranty": 2
     },
-    "features": ["Comfortable Ride", "Elegant Design", "Fuel Efficiency"]
+    "images": [
+      "/images/peugeot_407_coupe.jpg",
+      "/images/peugeot_407_coupe.jpg",
+      "/images/peugeot_407_coupe.jpg",
+      "/images/peugeot_407_coupe.jpg"
+    ]
   }
 ]

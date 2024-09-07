@@ -5,6 +5,7 @@ import { Vehicle, VehicleSpecsFilter } from '@/interfaces';
 import { SortingType } from '@/enums';
 import { applyFilters } from '@/lib/filters';
 import getFunctionBySorting from '@/lib/sorting';
+import { notFound } from 'next/navigation';
 
 export async function getVehicles(
   limit: number = 8,
@@ -32,4 +33,15 @@ export async function getVehicles(
     vehicles: list,
     totalCount: vehiclesList.length,
   };
+}
+
+export async function getVehicleById(id: string): Promise<Vehicle> {
+  let vehiclesList = [...vehicles] as Array<Vehicle>;
+  const vehicle = vehiclesList.find((vehicle) => vehicle.id === id);
+
+  if (!vehicle) {
+    notFound();
+  }
+
+  return vehicle;
 }

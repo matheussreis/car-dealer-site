@@ -1,7 +1,14 @@
 {
+  "site": {
+    "name": "Acme Inc."
+  },
   "pages": {
-    "home": {},
-    "about": {},
+    "home": {
+      "title": "Home"
+    },
+    "about": {
+      "title": "About Us"
+    },
     "vehicles": {
       "title": "Vehicles",
       "description": "Browse our selection of vehicles.",
@@ -33,17 +40,17 @@
       },
       "filters": {
         "titles": {
-          "bodyTypes": "Body Type",
-          "fuelTypes": "Fuel Type",
+          "bodyType": "Body Type",
+          "fuelType": "Fuel Type",
           "gearbox": "Gearbox",
-          "brands": "Brand",
+          "brand": "Brand",
           "origin": "Origin",
           "drivetrain": "Drivetrain",
           "year": "Year",
           "mileage": "Mileage"
         },
         "options": {
-          "bodyTypes": {
+          "bodyType": {
             "cityCar": "City Car",
             "hatchback": "Hatchback",
             "saloon": "Saloon",
@@ -56,7 +63,7 @@
             "sevenSeater": "7 Seater",
             "mpv": "Multi-Purpose Vehicle"
           },
-          "fuelTypes": {
+          "fuelType": {
             "petrol": "Petrol",
             "diesel": "Diesel",
             "electric": "Electric",
@@ -66,7 +73,7 @@
             "manual": "Manual",
             "automatic": "Automatic"
           },
-          "brands": {
+          "brand": {
             "alfaRomeo": "Alfa Romeo",
             "audi": "Audi",
             "bentley": "Bentley",
@@ -88,7 +95,7 @@
             "lexus": "Lexus",
             "maserati": "Maserati",
             "mazda": "Mazda",
-            "mercedesBenz": "Mercedes-Benz",
+            "mercedes": "Mercedes-Benz",
             "mini": "MINI",
             "mitsubishi": "Mitsubishi",
             "nissan": "Nissan",
@@ -116,11 +123,53 @@
             "fwd": "Front-Wheel Drive (FWD)",
             "rwd": "Rear-Wheel Drive (RWD)",
             "awd": "All-Wheel Drive (AWD)"
+          },
+          "color": {
+            "red": "Red",
+            "blue": "Blue",
+            "green": "Green",
+            "yellow": "Yellow",
+            "orange": "Orange",
+            "purple": "Purple",
+            "black": "Black",
+            "white": "White",
+            "gray": "Grey",
+            "brown": "Brown",
+            "pink": "Pink",
+            "silver": "Silver",
+            "beige": "Beige",
+            "navyBlue": "Navy Blue",
+            "olive": "Olive",
+            "teal": "Teal"
           }
         }
       }
     },
-    "vehicle": {}
+    "vehicle": {
+      "specs": {
+        "horsePower": "Horse Power",
+        "mileage": "Mileage",
+        "price": "Price",
+        "fuelType": "Fuel Type",
+        "bodyType": "Body Type",
+        "engine": "Engine",
+        "gearbox": "Gearbox",
+        "seats": "Seats",
+        "doors": "Doors",
+        "brand": "Brand",
+        "origin": "Origin",
+        "drivetrain": "Drive Train",
+        "year": "Year",
+        "color": "Colour",
+        "wheelSize": "Wheel Size",
+        "previousOwners": "Previous Owners",
+        "co2Emissions": "CO2 Emissions",
+        "warranty": "Warranty"
+      },
+      "additionalDetails": {
+        "title": "Additional Details"
+      }
+    }
   },
   "layout": {
     "navbar": {
@@ -145,7 +194,18 @@
       "address": "23 Main St, Anytown USA",
       "copyrights": "© 2024 Acme Inc. All rights reserved.",
       "terms": "Terms of Service",
-      "privacy": "Privacy Policy"
+      "privacy": "Privacy Policy",
+      "social": {
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "instagram": "Instagram"
+      }
     }
+  },
+  "units": {
+    "horsePower": "HP",
+    "mileage": "Km",
+    "co2Emissions": "g/km",
+    "years": "Years"
   }
 }

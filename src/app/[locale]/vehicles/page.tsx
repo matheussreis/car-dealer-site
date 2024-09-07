@@ -7,6 +7,14 @@ import VehiclePagination from './_components/vehicle-pagination';
 import VehicleSorting from './_components/vehicle-sorting';
 import { VehicleFilter } from './_components/vehicle-filter';
 import { getTranslations } from 'next-intl/server';
+import { Metadata } from 'next';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations();
+  return {
+    title: `${t('pages.vehicles.title')} | ${t('site.name')}`,
+  };
+}
 
 interface VehiclesPageProps {
   searchParams: { [key: string]: string | string[] | undefined };
