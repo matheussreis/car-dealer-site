@@ -26,7 +26,7 @@ export async function Navbar() {
     <header className="bg-black text-white flex h-16 w-full items-center justify-between px-4 md:px-6">
       <Link className="flex items-center gap-2 text-lg font-semibold" href="/">
         <LuMountain className="h-6 w-6" />
-        <span className="sr-only">Acme Inc</span>
+        <span className="sr-only">{t('companyName')}</span>
       </Link>
       <Sheet>
         <SheetTrigger asChild>

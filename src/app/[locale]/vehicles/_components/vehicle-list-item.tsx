@@ -35,7 +35,7 @@ export default function VehicleItem({
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <Image
-        alt="Car Image"
+        alt={name}
         className="w-full h-48 object-cover"
         height={225}
         src={src}

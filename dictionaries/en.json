@@ -4,7 +4,30 @@
   },
   "pages": {
     "home": {
-      "title": "Home"
+      "title": "Home",
+      "heroSection": {
+        "title": "Find the Ideal Car",
+        "description": "Browse our wide selection of high-quality vehicles and find the perfect car for you.",
+        "imageAlt": "Hero Car",
+        "buttons": {
+          "explore": "Explore"
+        }
+      },
+      "featuredVehicles": {
+        "title": "Featured Models",
+        "description": "Explore our selection of the latest and greatest vehicles from top brands.",
+        "buttons": {
+          "learnMore": "Learn More"
+        }
+      },
+      "contactUs": {
+        "title": "Contact Us",
+        "description": "Get in touch with our team to learn more about our vehicles and services.",
+        "phone": "+1 (555) 123-4567",
+        "email": "info@cardealer.com",
+        "address": "23 Main St, Anytown USA",
+        "imageAlt": "Contact Us Car"
+      }
     },
     "about": {
       "title": "About Us"
@@ -174,7 +197,9 @@
       "title": "Page Not Found",
       "header": "Oops, page not found!",
       "description": "The page you're looking for doesn't exist. Check the URL or go back to the homepage.",
-      "redirectButton": "Go to Homepage"
+      "buttons": {
+        "redirect": "Go to Homepage"
+      }
     }
   },
   "layout": {
@@ -185,7 +210,8 @@
       "languages": {
         "en": "English",
         "pt": "Portuguese"
-      }
+      },
+      "companyName": "Acme Inc."
     },
     "footer": {
       "titles": {

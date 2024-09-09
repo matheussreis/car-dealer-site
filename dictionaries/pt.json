@@ -4,7 +4,30 @@
   },
   "pages": {
     "home": {
-      "title": "início"
+      "title": "início",
+      "heroSection": {
+        "title": "Encontre o Carro Ideal",
+        "description": "Explore a nossa vasta seleção de veículos de alta qualidade e encontre o carro perfeito para si.",
+        "imageAlt": "Carro em Destaque",
+        "buttons": {
+          "explore": "Explorar"
+        }
+      },
+      "featuredVehicles": {
+        "title": "Modelos em Destaque",
+        "description": "Explore a nossa seleção dos veículos mais recentes e destacados das melhores marcas.",
+        "buttons": {
+          "learnMore": "Saiba Mais"
+        }
+      },
+      "contactUs": {
+        "title": "Contacte-nos",
+        "description": "Entre em contacto com a nossa equipa para saber mais sobre os nossos veículos e serviços.",
+        "phone": "+1 (555) 123-4567",
+        "email": "info@cardealer.com",
+        "address": "23 Main St, Anytown USA",
+        "imageAlt": "Carro Contacte-nos"
+      }
     },
     "about": {
       "title": "Sobre Nós"
@@ -174,7 +197,9 @@
       "title": "Página não encontrada",
       "header": "Ops, página não encontrada!",
       "description": "A página que procura não existe. Verifique a URL ou volte à página inicial.",
-      "redirectButton": "Ir para a Página Inicial"
+      "buttons": {
+        "redirect": "Ir para a Página Inicial"
+      }
     }
   },
   "layout": {
@@ -185,7 +210,8 @@
       "languages": {
         "en": "Inglês",
         "pt": "Português"
-      }
+      },
+      "companyName": "Acme Inc."
     },
     "footer": {
       "titles": {
