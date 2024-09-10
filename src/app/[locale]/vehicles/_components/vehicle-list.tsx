@@ -3,6 +3,7 @@
 import { Vehicle } from '@/interfaces';
 import { getTranslations } from 'next-intl/server';
 import VehicleItem from './vehicle-list-item';
+import { getDropdownOptions } from '@/lib/filters';
 
 interface VehicleListProps {
   vehicles: Vehicle[];
@@ -14,6 +15,7 @@ export default async function VehicleList({
   isPending,
 }: VehicleListProps) {
   const t = await getTranslations('pages.vehicles');
+  const dropdownOptions = await getDropdownOptions();
 
   if (isPending) {
     return (
@@ -31,7 +33,7 @@ export default async function VehicleList({
             key={vehicle.id}
             id={vehicle.id}
             name={vehicle.name}
-            bodyType={vehicle.specs.bodyType}
+            bodyType={dropdownOptions.bodyType[vehicle.specs.bodyType]}
             price={vehicle.specs.price}
             src={vehicle.cover}
             linkLabel={t('buttons.details')}

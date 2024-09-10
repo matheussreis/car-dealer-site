@@ -40,10 +40,7 @@ export default async function VehicleDetailsPage({
   const vehicle = await getVehicleById(id);
   const t = await getTranslations('pages.vehicle.specs');
 
-  const dropdownOptions = (await getDropdownOptions()) as unknown as Record<
-    keyof VehicleSpecs,
-    Record<string, string>
-  >;
+  const dropdownOptions = await getDropdownOptions();
 
   const specs = Object.keys(vehicle.specs) as Array<keyof VehicleSpecs>;
   const vehicleMainSpecs: Array<VehicleSpecItem> = [];

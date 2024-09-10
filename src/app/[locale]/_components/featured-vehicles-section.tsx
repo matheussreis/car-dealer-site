@@ -6,10 +6,12 @@ import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { getVehicles } from '../_actions/vehicles';
+import { getDropdownOptions } from '@/lib/filters';
 
 export default async function FeaturedVehiclesSection() {
   const { vehicles } = await getVehicles(3, 0, SortingType.DescendingDate);
   const t = await getTranslations('pages.home.featuredVehicles');
+  const dropdownOptions = await getDropdownOptions();
 
   return (
     <section className="w-full py-10 md:py-32">
@@ -29,7 +31,7 @@ export default async function FeaturedVehiclesSection() {
                 key={vehicle.id}
                 id={vehicle.id}
                 name={vehicle.name}
-                bodyType={vehicle.specs.bodyType}
+                bodyType={dropdownOptions.bodyType[vehicle.specs.bodyType]}
                 cover={vehicle.cover}
               />
             );

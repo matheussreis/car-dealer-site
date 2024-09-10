@@ -1,11 +1,31 @@
 import {
   Vehicle,
   VehicleSpecRangeFilter,
+  VehicleSpecs,
   VehicleSpecsFilter,
 } from '@/interfaces';
 import { createArrayFromRange } from './utils';
 import vehicles from '../../public/data.json';
 import { getTranslations } from 'next-intl/server';
+
+type VehicleSpecsDropdown = keyof Pick<
+  VehicleSpecs,
+  | 'bodyType'
+  | 'fuelType'
+  | 'gearbox'
+  | 'brand'
+  | 'origin'
+  | 'drivetrain'
+  | 'color'
+>;
+
+type VehicleSpecsNonDropdown = Exclude<
+  keyof VehicleSpecs,
+  VehicleSpecsDropdown
+>;
+
+type VehicleSpecsMap = Record<VehicleSpecsDropdown, Record<string, string>> &
+  Partial<Record<VehicleSpecsNonDropdown, Record<string, string>>>;
 
 function matchesStringFilter(filterValue: string, itemValue: string) {
   return !filterValue || filterValue === itemValue;
@@ -78,7 +98,7 @@ export function getYearFilter() {
   return createArrayFromRange(newest, oldest);
 }
 
-export async function getDropdownOptions() {
+export async function getDropdownOptions(): Promise<VehicleSpecsMap> {
   const t = await getTranslations('pages.vehicles.filters.options');
 
   return {
