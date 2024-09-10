@@ -1,8 +1,8 @@
 'use server';
 
-import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { getTranslations } from 'next-intl/server';
+import ImageWithFallback from '@/components/image-with-fallback';
 
 export default async function HeroSection() {
   const t = await getTranslations('pages.home.heroSection');
@@ -24,9 +24,10 @@ export default async function HeroSection() {
             {t('buttons.explore')}
           </Link>
         </div>
-        <Image
+        <ImageWithFallback
           alt={t('imageAlt')}
           className="mx-auto rounded-xl object-cover"
+          fallbackSrc="/placeholder.svg"
           height="500"
           src="/images/twingo_9c.jpg"
           style={{

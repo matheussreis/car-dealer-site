@@ -1,8 +1,8 @@
 'use server';
 
-import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { LuLocate, LuMailbox, LuPhone } from 'react-icons/lu';
+import ImageWithFallback from '@/components/image-with-fallback';
 
 export default async function ContactUsSection() {
   const t = await getTranslations('pages.home.contactUs');
@@ -12,12 +12,13 @@ export default async function ContactUsSection() {
       <div className="container px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div>
-            <Image
+            <ImageWithFallback
               alt={t('imageAlt')}
               className="w-full h-full object-cover rounded-xl"
-              height="400"
-              width="600"
+              height={400}
+              width={600}
               src="/images/golf.jpeg"
+              fallbackSrc="/placeholder.svg"
               style={{
                 aspectRatio: '600/400',
                 objectFit: 'cover',

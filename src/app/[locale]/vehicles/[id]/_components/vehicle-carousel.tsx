@@ -4,7 +4,7 @@ import {
   CarouselControls,
   CarouselItem,
 } from '@/components/ui/carousel';
-import Image from 'next/image';
+import ImageWithFallback from '@/components/image-with-fallback';
 
 interface VehicleCarouselProps {
   name: string;
@@ -22,9 +22,10 @@ export default function VehicleCarousel({
           {images.map((image, index) => (
             <CarouselItem key={`${image}-${index}`}>
               <div className="relative aspect-[500/350]">
-                <Image
+                <ImageWithFallback
                   src={image}
                   alt={`${name} ${index + 1}`}
+                  fallbackSrc="/placeholder.svg"
                   className="object-cover"
                   fill
                 />

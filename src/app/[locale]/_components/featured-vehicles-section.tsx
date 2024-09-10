@@ -1,12 +1,12 @@
 'use server';
 
-import Image from 'next/image';
 import { SortingType } from '@/enums';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { getVehicles } from '../_actions/vehicles';
 import { getDropdownOptions } from '@/lib/filters';
+import ImageWithFallback from '@/components/image-with-fallback';
 
 export default async function FeaturedVehiclesSection() {
   const { vehicles } = await getVehicles(3, 0, SortingType.DescendingDate);
@@ -59,9 +59,10 @@ function FeaturedVehicleItem({
 
   return (
     <div className="bg-white dark:bg-gray-950 rounded-xl overflow-hidden shadow-lg">
-      <Image
+      <ImageWithFallback
         alt={name}
         className="w-full object-cover"
+        fallbackSrc="/placeholder.svg"
         height="255"
         src={cover}
         style={{

@@ -1,10 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { formatCurrency } from '@/lib/formatters';
 import { useRouter } from '@/i18n/navigation';
 import { revalidateUrl } from '../../_actions/general';
+import ImageWithFallback from '@/components/image-with-fallback';
 
 interface VehicleItemProps {
   id: string;
@@ -34,9 +34,10 @@ export default function VehicleItem({
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <Image
+      <ImageWithFallback
         alt={name}
         className="w-full h-48 object-cover"
+        fallbackSrc="/placeholder.svg"
         height={225}
         src={src}
         style={{
