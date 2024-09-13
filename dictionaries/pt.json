@@ -30,7 +30,43 @@
       }
     },
     "about": {
-      "title": "Sobre Nós"
+      "title": "Sobre Nós",
+      "heroSection": {
+        "title": "Carros para o Condutor Exigente",
+        "description": "Explore uma vasta seleção de veículos premium no nosso concessionário, onde a qualidade encontra um atendimento ao cliente excecional. Quer esteja à procura de luxo, performance ou fiabilidade diária, estamos comprometidos em oferecer uma experiência que supera as expectativas.",
+        "imageAlt": "About us hero image"
+      },
+      "storyAndAwardsSection": {
+        "story": {
+          "title": "A Nossa Jornada Até Agora",
+          "description": "Desde os nossos humildes começos, crescemos para nos tornarmos num concessionário de confiança, conhecido por oferecer veículos de qualidade e um serviço excecional. Quer esteja à procura de luxo, performance ou fiabilidade diária, o nosso foco continua a ser construir confiança e proporcionar uma experiência de compra de automóveis tranquila. A nossa paixão pela excelência na condução motiva-nos todos os dias enquanto ajudamos os clientes a encontrar o seu veículo perfeito."
+        },
+        "awards": {
+          "title": "Prémios e Certificações",
+          "items": {
+            "award1": "Concessionária de Carros de Luxo do Ano (2020-2022)",
+            "award2": "Concessionária Certificada de Veículos Usados (2018-2022)",
+            "award3": "Prémio de Satisfação do Cliente (2019, 2021)",
+            "award4": "Certificação de Excelência em Comércio Automóvel (2017-2022)"
+          }
+        }
+      },
+      "teamSection": {
+        "title": "Conheça a Nossa Equipa",
+        "description": "A nossa equipa de profissionais experientes de vendas e assistência está dedicada a proporcionar aos nossos clientes o mais alto nível de atenção personalizada e especialização. Desde o nosso pessoal de vendas experiente até aos nossos técnicos qualificados, estamos comprometidos em garantir que a sua experiência connosco seja absolutamente excecional.",
+        "teamMembers": {
+          "member1": { "name": "John Doe", "role": "Gerente de Vendas" },
+          "member2": { "name": "Jane Smith", "role": "Gerente de Assistência" },
+          "member3": {
+            "name": "Michael Johnson",
+            "role": "Consultor de Vendas"
+          },
+          "member4": {
+            "name": "Emily Davis",
+            "role": "Consultora de Assistência"
+          }
+        }
+      }
     },
     "vehicles": {
       "title": "Veículos",

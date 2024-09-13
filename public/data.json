@@ -76,7 +76,7 @@
       "mileage": 30000,
       "price": 45000,
       "fuelType": "diesel",
-      "bodyType": "Coupe",
+      "bodyType": "coupe",
       "engine": "2.0",
       "gearbox": "automatic",
       "seats": 4,

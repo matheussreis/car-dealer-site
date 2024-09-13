@@ -30,7 +30,37 @@
       }
     },
     "about": {
-      "title": "About Us"
+      "title": "About Us",
+      "heroSection": {
+        "title": "Cars for the Discerning Driver",
+        "description": "Explore a wide selection of premium vehicles at our dealership, where quality meets exceptional customer service. Whether you're looking for luxury, performance, or everyday reliability, we are committed to delivering an experience that exceeds expectations.",
+        "imageAlt": "About us hero image"
+      },
+      "storyAndAwardsSection": {
+        "story": {
+          "title": "Our Journey So Far",
+          "description": "From our humble beginnings, we've grown into a trusted dealership known for offering quality vehicles and exceptional service. Whether you're looking for luxury, performance, or everyday reliability, our focus remains on building trust and providing a seamless car-buying experience. Our passion for driving excellence drives us every day as we help customers find their perfect vehicle."
+        },
+        "awards": {
+          "title": "Awards & Certifications",
+          "items": {
+            "award1": "Luxury Car Dealer of the Year (2020-2022)",
+            "award2": "Certified Pre-Owned Dealer of Excellence (2018-2022)",
+            "award3": "Customer Satisfaction Award (2019, 2021)",
+            "award4": "Automotive Retail Excellence Certification (2017-2022)"
+          }
+        }
+      },
+      "teamSection": {
+        "title": "Meet Our Team",
+        "description": "Our team of experienced sales and service professionals are dedicated to providing our customers with the highest level of personalized attention and expertise. From our knowledgeable sales staff to our skilled technicians, we are committed to ensuring your experience with us is nothing short of exceptional.",
+        "teamMembers": {
+          "member1": { "name": "John Doe", "role": "Sales Manager" },
+          "member2": { "name": "Jane Smith", "role": "Service Manager" },
+          "member3": { "name": "Michael Johnson", "role": "Sales Consultant" },
+          "member4": { "name": "Emily Davis", "role": "Service Advisor" }
+        }
+      }
     },
     "vehicles": {
       "title": "Vehicles",
