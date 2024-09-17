@@ -240,7 +240,10 @@
     "termsOfService": {
       "title": "Termos de Serviço",
       "description": "Bem-vindo à {companyName}! Ao aceder e utilizar o nosso site, você concorda em cumprir e estar vinculado pelos seguintes termos e condições. Por favor, leia estes termos cuidadosamente antes de utilizar o nosso site.",
-      "lastUpdatedDate": "2024-09-15",
+      "effectiveDate": {
+        "title": "Data de Vigência",
+        "value": "2024-09-15"
+      },
       "items": {
         "acceptanceOfTerms": {
           "title": "Aceitação dos Termos",

@@ -234,7 +234,10 @@
     "termsOfService": {
       "title": "Terms of Service",
       "description": "Welcome to {companyName}! By accessing and using our website, you agree to comply with and be bound by the following terms and conditions. Please read these terms carefully before using our website.",
-      "lastUpdatedDate": "2024-09-15",
+      "effectiveDate": {
+        "title": "Effective Date",
+        "value": "2024-09-15"
+      },
       "items": {
         "acceptanceOfTerms": {
           "title": "Acceptance of Terms",

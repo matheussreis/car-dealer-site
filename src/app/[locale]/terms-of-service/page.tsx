@@ -1,7 +1,9 @@
 'use server';
 
 import { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { Locale } from '@/i18n/settings';
+import { formatDate } from '@/lib/formatters';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations();
@@ -77,11 +79,19 @@ async function TermsOfServiceHeader({
   companyName,
 }: TermsOfServiceHeaderProps) {
   const t = await getTranslations('pages.termsOfService');
+  const locale = await getLocale();
+  const formattedDate = formatDate(
+    new Date(t('effectiveDate.value')),
+    locale as Locale
+  );
 
   return (
     <div>
       <h1 className="text-3xl font-bold tracking-tight">{t('title')}</h1>
-      <p className="mt-4 text-muted-foreground">
+      <p className="mt-2 font-medium text-1xl">
+        {`${t('effectiveDate.title')}: ${formattedDate}`}
+      </p>
+      <p className="mt-3 text-muted-foreground text-1xl">
         {t('description', {
           companyName: companyName,
         })}
@@ -123,11 +133,13 @@ async function TermsOfServiceItem({
   }
 
   return (
-    <li key={termOfServiceKey}>
-      <h3 className="text-lg font-medium">{`${position}. ${t(
-        `${termOfServiceKey}.title`
-      )}`}</h3>
-      <p className="text-muted-foreground">{description}</p>
+    <li className="space-y-1">
+      <div className="mb-2">
+        <h3 className="text-lg font-bold">{`${position}. ${t(
+          `${termOfServiceKey}.title`
+        )}`}</h3>
+        <p className="text-muted-foreground">{description}</p>
+      </div>
       {subitemsCount > 0 && (
         <TermsOfServiceSubitems
           termOfServiceKey={termOfServiceKey as TermsOfServiceWithSubitems}
@@ -156,13 +168,13 @@ async function TermsOfServiceSubitems({
 
         const text = t(`${termOfServiceKey}.subitems.${key as 'item1'}`);
 
-        const [boldText, regularText] = text.includes(':')
+        const [darkerText, regularText] = text.includes(':')
           ? text.split(':', 2)
           : [null, text];
 
         return (
           <li key={key}>
-            {boldText && <b>{boldText}:</b>}
+            {darkerText && <span className="font-medium">{darkerText}:</span>}
             <span className="text-muted-foreground m-0">{regularText}</span>
           </li>
         );
