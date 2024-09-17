@@ -1,8 +1,10 @@
 'use server';
 
 import Link from 'next/link';
+import { Link as NextIntlLink } from '@/i18n/navigation';
 import { getTranslations } from 'next-intl/server';
-import { LuFacebook, LuInstagram, LuTwitter } from 'react-icons/lu';
+import { FaXTwitter } from 'react-icons/fa6';
+import { LuFacebook, LuInstagram } from 'react-icons/lu';
 
 export async function Footer() {
   const t = await getTranslations('layout.footer');
@@ -29,15 +31,21 @@ export async function Footer() {
           <div>
             <h3 className="text-lg font-medium mb-4">{t('titles.followUs')}</h3>
             <div className="flex space-x-4">
-              <Link className="hover:text-gray-300" href="#">
-                <LuTwitter className="h-6 w-6" />
+              <Link className="hover:text-gray-300" href="https://x.com">
+                <FaXTwitter className="h-6 w-6" />
                 <span className="sr-only">{t('social.twitter')}</span>
               </Link>
-              <Link className="hover:text-gray-300" href="#">
+              <Link
+                className="hover:text-gray-300"
+                href="https://www.facebook.com/"
+              >
                 <LuFacebook className="h-6 w-6" />
                 <span className="sr-only">{t('social.facebook')}</span>
               </Link>
-              <Link className="hover:text-gray-300" href="#">
+              <Link
+                className="hover:text-gray-300"
+                href="https://www.instagram.com/"
+              >
                 <LuInstagram className="h-6 w-6" />
                 <span className="sr-only">{t('social.instagram')}</span>
               </Link>
@@ -46,9 +54,12 @@ export async function Footer() {
           <div />
           <div className="text-right">
             <p className="mb-2">{t('copyrights')}</p>
-            <Link className="text-gray-400 hover:text-gray-300" href="#">
+            <NextIntlLink
+              className="text-gray-400 hover:text-gray-300"
+              href="/terms-of-service"
+            >
               {t('terms')}
-            </Link>
+            </NextIntlLink>
             <span className="mx-2">|</span>
             <Link className="text-gray-400 hover:text-gray-300" href="#">
               {t('privacy')}

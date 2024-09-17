@@ -236,6 +236,64 @@
       "buttons": {
         "redirect": "Ir para a Página Inicial"
       }
+    },
+    "termsOfService": {
+      "title": "Termos de Serviço",
+      "description": "Bem-vindo à {companyName}! Ao aceder e utilizar o nosso site, você concorda em cumprir e estar vinculado pelos seguintes termos e condições. Por favor, leia estes termos cuidadosamente antes de utilizar o nosso site.",
+      "lastUpdatedDate": "2024-09-15",
+      "items": {
+        "acceptanceOfTerms": {
+          "title": "Aceitação dos Termos",
+          "description": "Ao aceder ou utilizar o nosso site, você concorda com estes Termos de Serviço. Se não concordar, por favor não utilize o site."
+        },
+        "websiteUsage": {
+          "title": "Utilização do Site",
+          "description": "Você concorda em utilizar o site apenas para fins legais e de acordo com estes Termos de Serviço. É proibido utilizar o site para:",
+          "subitems": {
+            "item1": "Violar qualquer lei ou regulamento.",
+            "item2": "Participar em qualquer atividade que possa prejudicar a funcionalidade do site.",
+            "item3": "Submeter informações falsas, enganosas ou incompletas.",
+            "item4": "Violação dos direitos de terceiros, incluindo direitos de propriedade intelectual."
+          }
+        },
+        "vehicleListings": {
+          "title": "Anúncios de Veículos",
+          "description": "As informações fornecidas no nosso site, incluindo anúncios de veículos, especificações, preços e disponibilidade, são apenas para fins informativos. Embora nos esforcemos para manter as informações precisas e atualizadas, não garantimos a precisão ou a integridade de qualquer informação no site.",
+          "subitems": {
+            "item1": "Disponibilidade de Veículos: A disponibilidade de veículos está sujeita a alterações sem aviso prévio. Por favor, entre em contacto connosco para verificar a disponibilidade de qualquer veículo listado no site.",
+            "item2": "Preços: Os preços listados no site estão sujeitos a alterações e podem não incluir impostos, taxas ou custos adicionais. Reservamo-nos o direito de modificar os preços a qualquer momento sem aviso prévio.",
+            "item3": "Características do Veículo: As características e especificações dos veículos fornecidas no site são baseadas nas informações disponíveis. Não somos responsáveis por discrepâncias entre as características listadas e as características reais de um veículo."
+          }
+        },
+        "noGuaranteedTransactions": {
+          "title": "Sem Garantia de Vendas ou Transações",
+          "description": "O site é fornecido como uma plataforma para exibir veículos. Não garantimos quaisquer vendas ou transações através do site. Todas as compras de veículos devem ser concluídas pessoalmente na nossa concessionária."
+        },
+        "intellectualProperty": {
+          "title": "Propriedade Intelectual",
+          "description": "Todo o conteúdo do site, incluindo texto, imagens, logotipos e gráficos, é propriedade de {companyName} ou dos seus licenciadores e está protegido por direitos autorais, marcas registradas e outras leis de propriedade intelectual. Você não pode copiar, distribuir ou utilizar qualquer conteúdo do site sem a nossa permissão por escrito."
+        },
+        "thirdPartyLinks": {
+          "title": "Links de Terceiros",
+          "description": "O nosso site pode conter links para sites ou serviços de terceiros. Estes links são fornecidos para sua conveniência, e não endossamos nem assumimos qualquer responsabilidade pelo conteúdo, políticas ou práticas dos sites de terceiros."
+        },
+        "disclaimerOfWarranties": {
+          "title": "Isenção de Garantias",
+          "description": "O nosso site é fornecido \"como está\" e \"conforme disponível\" sem garantias de qualquer tipo, expressas ou implícitas. Não garantimos que o site será livre de erros, ininterrupto ou seguro, ou que qualquer informação fornecida é precisa."
+        },
+        "limitationOfLiability": {
+          "title": "Limitação de Responsabilidade",
+          "description": "Em nenhum caso, {companyName}, seus diretores, funcionários ou afiliados serão responsáveis por quaisquer danos indiretos, incidentais, especiais ou consequenciais decorrentes ou relacionados com o uso do site ou a compra de qualquer veículo através da nossa concessionária."
+        },
+        "changesToTermsOfService": {
+          "title": "Alterações aos Termos de Serviço",
+          "description": "Reservamo-nos o direito de atualizar ou modificar estes Termos de Serviço a qualquer momento. Quaisquer alterações serão efetivas imediatamente após a publicação dos Termos de Serviço atualizados no nosso site. É sua responsabilidade revisar os Termos regularmente."
+        },
+        "governingLaw": {
+          "title": "Lei Aplicável",
+          "description": "Estes Termos de Serviço serão regidos e interpretados de acordo com as leis de Portugal, sem considerar suas disposições sobre conflitos de leis."
+        }
+      }
     }
   },
   "layout": {

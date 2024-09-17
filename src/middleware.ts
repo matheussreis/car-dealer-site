@@ -12,5 +12,6 @@ export const config = {
     '/((?!api|_next|_vercel|.*\\..*).*)',
     '/([\\w-]+)?/vehicles/(.+)',
     '/([\\w-]+)?/about/(.+)',
+    '/([\\w-]+)?/terms-of-service/(.+)',
   ],
 };

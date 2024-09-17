@@ -230,6 +230,64 @@
       "buttons": {
         "redirect": "Go to Homepage"
       }
+    },
+    "termsOfService": {
+      "title": "Terms of Service",
+      "description": "Welcome to {companyName}! By accessing and using our website, you agree to comply with and be bound by the following terms and conditions. Please read these terms carefully before using our website.",
+      "lastUpdatedDate": "2024-09-15",
+      "items": {
+        "acceptanceOfTerms": {
+          "title": "Acceptance of Terms",
+          "description": "By accessing or using our website, you agree to these Terms of Service. If you do not agree, please do not use the website."
+        },
+        "websiteUsage": {
+          "title": "Use of the Website",
+          "description": "You agree to use the website only for lawful purposes and in accordance with these Terms of Service. You are prohibited from using the website to:",
+          "subitems": {
+            "item1": "Violate any laws or regulations.",
+            "item2": "Engage in any activity that could harm the website's functionality.",
+            "item3": "Submit false, misleading, or incomplete information.",
+            "item4": "Infringe upon the rights of others, including intellectual property rights."
+          }
+        },
+        "vehicleListings": {
+          "title": "Vehicle Listings",
+          "description": "The information provided on our website, including vehicle listings, specifications, pricing, and availability, is for informational purposes only. While we strive to keep the information accurate and up-to-date, we do not guarantee the accuracy or completeness of any information on the website.",
+          "subitems": {
+            "item1": "Vehicle Availability: Vehicle availability is subject to change without notice. Please contact us to verify the availability of any vehicle listed on the website.",
+            "item2": "Pricing: Prices listed on the website are subject to change and may not include taxes, fees, or additional costs. We reserve the right to modify prices at any time without prior notice.",
+            "item3": "Vehicle Features: Vehicle features and specifications provided on the website are based on available information. We are not responsible for discrepancies between listed features and the actual features of a vehicle."
+          }
+        },
+        "noGuaranteedTransactions": {
+          "title": "No Guarantee of Sales or Transactions",
+          "description": "The website is provided as a platform to showcase vehicles. We do not guarantee any sales or transactions through the website. All vehicle purchases must be completed in person at our dealership."
+        },
+        "intellectualProperty": {
+          "title": "Intellectual Property",
+          "description": "All content on the website, including text, images, logos, and graphics, is the property of {companyName} or its licensors and is protected by copyright, trademark, and other intellectual property laws. You may not copy, distribute, or use any content from the website without our prior written permission."
+        },
+        "thirdPartyLinks": {
+          "title": "Third-Party Links",
+          "description": "Our website may contain links to third-party websites or services. These links are provided for your convenience, and we do not endorse or assume any responsibility for the content, policies, or practices of third-party websites."
+        },
+        "disclaimerOfWarranties": {
+          "title": "Disclaimer of Warranties",
+          "description": "Our website is provided \"as is\" and \"as available\" without warranties of any kind, either express or implied. We do not warrant that the website will be error-free, uninterrupted, or secure, or that any information provided is accurate."
+        },
+        "limitationOfLiability": {
+          "title": "Limitation of Liability",
+          "description": "In no event shall {companyName}, its officers, employees, or affiliates be liable for any indirect, incidental, special, or consequential damages arising from or in connection with your use of the website or the purchase of any vehicle through our dealership."
+        },
+        "changesToTermsOfService": {
+          "title": "Changes to Terms of Service",
+          "description": "We reserve the right to update or modify these Terms of Service at any time. Any changes will be effective immediately upon posting the updated Terms of Service on our website. It is your responsibility to review the Terms regularly."
+        },
+        "governingLaw": {
+          "title": "Governing Law",
+          "description": "These Terms of Service shall be governed by and construed in accordance with the laws of Portugal, without regard to its conflict of law provisions."
+        }
+      }
     }
   },
   "layout": {
