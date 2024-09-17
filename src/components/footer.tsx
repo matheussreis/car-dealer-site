@@ -61,9 +61,12 @@ export async function Footer() {
               {t('terms')}
             </NextIntlLink>
             <span className="mx-2">|</span>
-            <Link className="text-gray-400 hover:text-gray-300" href="#">
+            <NextIntlLink
+              className="text-gray-400 hover:text-gray-300"
+              href="/privacy-policy"
+            >
               {t('privacy')}
-            </Link>
+            </NextIntlLink>
           </div>
         </div>
       </div>

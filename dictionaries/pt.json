@@ -1,6 +1,6 @@
 {
   "site": {
-    "name": "Acme Inc."
+    "name": "Acme Inc"
   },
   "pages": {
     "home": {
@@ -292,6 +292,51 @@
         "governingLaw": {
           "title": "Lei Aplicável",
           "description": "Estes Termos de Serviço serão regidos e interpretados de acordo com as leis de Portugal, sem considerar suas disposições sobre conflitos de leis."
+        }
+      }
+    },
+    "privacyPolicy": {
+      "title": "Política de Privacidade",
+      "effectiveDate": {
+        "title": "Data de Vigência",
+        "value": "2024-09-15"
+      },
+      "description": "Na {companyName}, estamos comprometidos com a proteção da sua privacidade. Esta Política de Privacidade descreve como recolhemos, usamos e protegemos informações quando visita o nosso site. O nosso site foi concebido para exibir veículos e as suas características, e não exigimos que os utilizadores forneçam quaisquer informações pessoais ou preencham formulários.",
+      "items": {
+        "collectedInformation": {
+          "title": "Informações que Coletamos",
+          "description": "Como nosso site não exige que os usuários preencham formulários ou forneçam informações pessoais, não coletamos dados pessoais diretamente dos usuários. No entanto, podemos coletar algumas informações não pessoais automaticamente, como:",
+          "subitems": {
+            "item1": "Informações de Uso do Site: Isso inclui dados como o seu endereço IP, tipo de navegador e páginas visitadas, que nos ajudam a melhorar a experiência do usuário em nosso site."
+          }
+        },
+        "useOfCollectedInformation": {
+          "title": "Como Usamos as Informações Coletadas",
+          "description": "Podemos usar os dados coletados automaticamente para:",
+          "subitems": {
+            "item1": "Analisar o tráfego do site e as tendências de uso.",
+            "item2": "Melhorar nosso site e garantir o funcionamento ideal."
+          }
+        },
+        "trackingTechnologies": {
+          "title": "Cookies e Tecnologias de Rastreamento",
+          "description": "Usamos cookies e tecnologias similares para melhorar sua experiência em nosso site. Eles nos ajudam a entender como os usuários interagem com o site. Você pode gerenciar as configurações de cookies através do seu navegador."
+        },
+        "thirdPartyLinks": {
+          "title": "Links de Terceiros",
+          "description": "Nosso site pode conter links para sites de terceiros. Não somos responsáveis pelas práticas de privacidade desses sites, por isso, incentivamos você a revisar as políticas de privacidade quando visitá-los."
+        },
+        "security": {
+          "title": "Segurança",
+          "description": "Embora não coletemos informações pessoais através do nosso site, tomamos medidas de segurança apropriadas para proteger os dados que coletamos (por exemplo, dados de uso do site) contra acessos não autorizados."
+        },
+        "childrenPrivacy": {
+          "title": "Privacidade das Crianças",
+          "description": "Nosso site não é destinado a indivíduos com menos de 16 anos. Não coletamos conscientemente informações pessoais de crianças."
+        },
+        "changesToPrivacyPolicy": {
+          "title": "Alterações a Esta Política de Privacidade",
+          "description": "Podemos atualizar esta Política de Privacidade periodicamente. Quaisquer alterações serão publicadas nesta página, e atualizaremos a \"Data de Vigência\" no topo da política. Recomendamos que você reveja esta política periodicamente para se manter atualizado."
         }
       }
     }

@@ -13,5 +13,6 @@ export const config = {
     '/([\\w-]+)?/vehicles/(.+)',
     '/([\\w-]+)?/about/(.+)',
     '/([\\w-]+)?/terms-of-service/(.+)',
+    '/([\\w-]+)?/privacy-policy/(.+)',
   ],
 };

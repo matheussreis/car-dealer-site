@@ -1,6 +1,6 @@
 import { Pathnames } from 'next-intl/routing';
 
-type Locale = 'en' | 'pt';
+export type Locale = 'en' | 'pt';
 
 export const locales: Locale[] = ['en', 'pt'];
 
@@ -11,4 +11,5 @@ export const pathnames = {
   '/vehicles': '/vehicles',
   '/about': '/about',
   '/terms-of-service': '/terms-of-service',
+  '/privacy-policy': '/privacy-policy',
 } satisfies Pathnames<typeof locales>;
