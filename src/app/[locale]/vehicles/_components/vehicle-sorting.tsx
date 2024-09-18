@@ -17,9 +17,13 @@ import { useTranslations } from 'next-intl';
 
 interface VehicleSortingProps {
   sorting: SortingType;
+  disabled: boolean;
 }
 
-export default function VehicleSorting({ sorting }: VehicleSortingProps) {
+export default function VehicleSorting({
+  sorting,
+  disabled = false,
+}: VehicleSortingProps) {
   const [selectedSorting, setSelectedSorting] = useState<SortingType>(
     SortingType.DescendingDate
   );
@@ -44,7 +48,7 @@ export default function VehicleSorting({ sorting }: VehicleSortingProps) {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger disabled={disabled} asChild>
         <Button className="shrink-0" variant="outline">
           <LuArrowUpDown className="w-4 h-4 mr-2" />
           {SORTING_OPTIONS[selectedSorting] || t('title')}

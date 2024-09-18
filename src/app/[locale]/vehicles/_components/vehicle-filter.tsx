@@ -33,9 +33,13 @@ const defaultFilter: VehicleSpecsFilter = {
 
 interface VehicleFilterProps {
   filters: VehicleSpecsFilter;
+  disabled: boolean;
 }
 
-export function VehicleFilter({ filters }: VehicleFilterProps) {
+export function VehicleFilter({
+  filters,
+  disabled = false,
+}: VehicleFilterProps) {
   const router = useRouter();
   const t = useTranslations('pages.vehicles');
   const filterOptions = useFilterOptions();
@@ -77,7 +81,7 @@ export function VehicleFilter({ filters }: VehicleFilterProps) {
 
   return (
     <Popover>
-      <PopoverTrigger asChild>
+      <PopoverTrigger disabled={disabled} asChild>
         <Button className="flex items-center gap-2" variant="outline">
           <LuFilter className="w-5 h-5" />
           {t('buttons.filters.title')}

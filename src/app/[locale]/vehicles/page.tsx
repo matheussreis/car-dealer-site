@@ -51,8 +51,8 @@ export default async function VehiclesPage({
           <p className="text-gray-500 dark:text-gray-400">{t('description')}</p>
         </div>
         <div className="flex items-center gap-4">
-          <VehicleFilter filters={filters} />
-          <VehicleSorting sorting={sorting} />
+          <VehicleFilter filters={filters} disabled={vehicles.length === 0} />
+          <VehicleSorting sorting={sorting} disabled={vehicles.length === 0} />
         </div>
       </div>
       <VehicleList vehicles={vehicles} isPending={false} />
