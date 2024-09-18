@@ -3,12 +3,24 @@
 import { useTranslations } from 'next-intl';
 import { createArrayFromRange } from '@/lib/utils';
 import { getYearFilter } from '@/lib/filters';
+import { useEffect, useState } from 'react';
 
 export default function useFilterOptions() {
+  const [yearFilter, setYearFilter] = useState<string[]>([]);
+
   const t = useTranslations('pages.vehicles.filters.options');
 
+  useEffect(() => {
+    const getFilter = async () => {
+      const filter = await getYearFilter();
+      setYearFilter(filter);
+    };
+
+    getFilter();
+  }, []);
+
   return {
-    year: getYearFilter(),
+    year: yearFilter,
     doors: createArrayFromRange(1, 7),
     seats: createArrayFromRange(1, 10),
     bodyType: {

@@ -1,11 +1,18 @@
 'use server';
 
-import vehicles from '@/../../data.json';
+import { promises as fs } from 'fs';
 import { Vehicle, VehicleSpecsFilter } from '@/interfaces';
 import { SortingType } from '@/enums';
 import { applyFilters } from '@/lib/filters';
 import getFunctionBySorting from '@/lib/sorting';
 import { notFound } from 'next/navigation';
+
+async function fetchVehicles(): Promise<Vehicle[]> {
+  const filePath = `${process.cwd()}/data.json`;
+  const file = await fs.readFile(filePath, 'utf8');
+  const vehicles = JSON.parse(file);
+  return vehicles as Vehicle[];
+}
 
 export async function getVehicles(
   limit: number = 8,
@@ -14,7 +21,7 @@ export async function getVehicles(
   filters?: VehicleSpecsFilter
 ): Promise<{ vehicles: Vehicle[]; totalCount: number }> {
   let list = new Array<Vehicle>();
-  let vehiclesList = [...vehicles] as Array<Vehicle>;
+  let vehiclesList = await fetchVehicles();
 
   const sortingFn = getFunctionBySorting(sortingType);
   sortingFn(vehiclesList);
@@ -36,7 +43,7 @@ export async function getVehicles(
 }
 
 export async function getVehicleById(id: string): Promise<Vehicle> {
-  let vehiclesList = [...vehicles] as Array<Vehicle>;
+  let vehiclesList = await fetchVehicles();
   const vehicle = vehiclesList.find((vehicle) => vehicle.id === id);
 
   if (!vehicle) {
@@ -44,4 +51,23 @@ export async function getVehicleById(id: string): Promise<Vehicle> {
   }
 
   return vehicle;
+}
+
+export async function getVehicleYearRange() {
+  let list = await fetchVehicles();
+
+  let newest = 0;
+  let oldest = new Date().getFullYear();
+
+  list.forEach((vehicle) => {
+    if (vehicle.specs.year > newest) {
+      newest = vehicle.specs.year;
+    }
+
+    if (vehicle.specs.year < oldest) {
+      oldest = vehicle.specs.year;
+    }
+  });
+
+  return { newest, oldest };
 }

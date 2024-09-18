@@ -5,8 +5,8 @@ import {
   VehicleSpecsFilter,
 } from '@/interfaces';
 import { createArrayFromRange } from './utils';
-import vehicles from '@/../../data.json';
 import { getTranslations } from 'next-intl/server';
+import { getVehicleYearRange } from '@/app/[locale]/_actions/vehicles';
 
 type VehicleSpecsDropdown = keyof Pick<
   VehicleSpecs,
@@ -79,22 +79,8 @@ export function mergeFiltersIntoUrl(filters: VehicleSpecsFilter, url: string) {
   return Object.fromEntries(searchParams.entries());
 }
 
-export function getYearFilter() {
-  let list = [...vehicles] as Array<Vehicle>;
-
-  let newest = 0;
-  let oldest = new Date().getFullYear();
-
-  list.forEach((vehicle) => {
-    if (vehicle.specs.year > newest) {
-      newest = vehicle.specs.year;
-    }
-
-    if (vehicle.specs.year < oldest) {
-      oldest = vehicle.specs.year;
-    }
-  });
-
+export async function getYearFilter() {
+  const { newest, oldest } = await getVehicleYearRange();
   return createArrayFromRange(newest, oldest);
 }
 
