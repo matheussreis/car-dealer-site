@@ -5,7 +5,7 @@ import {
   VehicleSpecsFilter,
 } from '@/interfaces';
 import { createArrayFromRange } from './utils';
-import vehicles from '../../public/data.json';
+import vehicles from '@/../../data.json';
 import { getTranslations } from 'next-intl/server';
 
 type VehicleSpecsDropdown = keyof Pick<
