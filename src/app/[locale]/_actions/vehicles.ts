@@ -1,6 +1,7 @@
 'use server';
 
-import { promises as fs } from 'fs';
+import fs from 'fs';
+import { promises } from 'fs';
 import { Vehicle, VehicleSpecsFilter } from '@/interfaces';
 import { SortingType } from '@/enums';
 import { applyFilters } from '@/lib/filters';
@@ -9,7 +10,12 @@ import { notFound } from 'next/navigation';
 
 async function fetchVehicles(): Promise<Vehicle[]> {
   const filePath = `${process.cwd()}/data.json`;
-  const file = await fs.readFile(filePath, 'utf8');
+
+  if (fs.existsSync(filePath) === false) {
+    await promises.writeFile(filePath, '[]', { encoding: 'utf-8' });
+  }
+
+  const file = await promises.readFile(filePath, 'utf8');
   const vehicles = JSON.parse(file);
   return vehicles as Vehicle[];
 }
