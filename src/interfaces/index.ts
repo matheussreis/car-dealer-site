@@ -3,7 +3,6 @@ export interface Vehicle {
   id: string;
   dateEntered: string;
   name: string;
-  description: string;
   cover: string;
   specs: VehicleSpecs;
   images: Array<string>;

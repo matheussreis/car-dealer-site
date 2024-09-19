@@ -27,7 +27,6 @@ Whenever the application fetches the vehicles, it checks whether the `/data.json
   "id": "d2f7e9c4-8e47-45bc-8354-d7c2f4b9a9a5",
   "dateEntered": "2024-08-15",
   "name": "BMW 3 Series",
-  "description": "Sporty and luxurious sedan",
   "cover": "/images/bmw_3_series.jpg",
   "specs": {
     "horsePower": 184,
