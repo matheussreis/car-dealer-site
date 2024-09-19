@@ -14,7 +14,7 @@ export default async function FeaturedVehiclesSection() {
   const dropdownOptions = await getDropdownOptions();
 
   return (
-    <section className="w-full py-10 md:py-32">
+    <section className="w-full py-10 md:py-16">
       <div className="container px-4 md:px-6">
         <div className="space-y-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
@@ -24,18 +24,25 @@ export default async function FeaturedVehiclesSection() {
             {t('description')}
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-          {vehicles.map((vehicle) => {
-            return (
-              <FeaturedVehicleItem
-                key={vehicle.id}
-                id={vehicle.id}
-                name={vehicle.name}
-                bodyType={dropdownOptions.bodyType[vehicle.specs.bodyType]}
-                cover={vehicle.cover}
-              />
-            );
-          })}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-2">
+          {vehicles.length === 0 && (
+            <div className="flex justify-center w-full h-full col-span-4 my-10 align-middle">
+              <p>{t('noVehicles')}</p>
+            </div>
+          )}
+
+          {vehicles.length > 0 &&
+            vehicles.map((vehicle) => {
+              return (
+                <FeaturedVehicleItem
+                  key={vehicle.id}
+                  id={vehicle.id}
+                  name={vehicle.name}
+                  bodyType={dropdownOptions.bodyType[vehicle.specs.bodyType]}
+                  cover={vehicle.cover}
+                />
+              );
+            })}
         </div>
       </div>
     </section>

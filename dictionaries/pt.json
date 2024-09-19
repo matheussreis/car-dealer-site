@@ -18,7 +18,8 @@
         "description": "Explore a nossa seleção dos veículos mais recentes e destacados das melhores marcas.",
         "buttons": {
           "learnMore": "Saiba Mais"
-        }
+        },
+        "noVehicles": "Sem veículos disponíveis"
       },
       "contactUs": {
         "title": "Contacte-nos",

@@ -18,7 +18,8 @@
         "description": "Explore our selection of the latest and greatest vehicles from top brands.",
         "buttons": {
           "learnMore": "Learn More"
-        }
+        },
+        "noVehicles": "No Vehicles Available"
       },
       "contactUs": {
         "title": "Contact Us",
